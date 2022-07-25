@@ -1,0 +1,478 @@
+console method
+- log
+- error
+- table
+- group
+- groupEnd
+
+document method
+- write
+- querySelector
+
+window method
+- alert
+
+Data Type
+- console.log(Typeof "Ahmed Nasser"); => string
+- console.log(Typeof 123); => number
+- console.log(Typeof [1, 2, 3]); => array,object
+- console.log(Typeof [a, b, c]); => array,object
+- console.log(Typeof {name: "Ahmed", age: 17, country: "eg"}); => object
+- console.log(Typeof true); => boolean
+- console.log(Typeof false); => boolean
+- console.log(Typeof undefined); => undefined
+- console.log(Typeof null); => boolean
+
+?
+NaN = [N]ot [a] [N]umber
+<script defer> [defer] => Execute the code after the page is loaded <!>important<!>
+
+Character Escape Sequences
+- \' single quote
+- \" double quote
+- \\ backslash
+- \n new line
+- \r carriage return
+- \t tab
+- \b backspace
+- \f form feed
+- \v vertical tab (Internet Explorer 9 and older treats '\v as 'v instead of a vertical tab ('\x0B). If cross-browser compatibility is a concern, use \x0B instead of \v.)
+- \0 null character (U+0000 NULL) (only if the next character is not a decimal digit; else it is an octal escape sequence)
+- \xFF character represented by the hexadecimal byte "FF"
+Note that the \v and \0 escapes are not allowed in JSON strings.
+
+Example code:
+
+class hw {
+   public static void main() {
+       System.out.println("Using 'Back slash n': \n It will move the words to the nxt line");//\n
+       System.out.println("Using 'Back slash tab': \t It will move the Word by one tab");//\t
+       System.out.println("Using 'backslash R' \r It will do the same as back slash n'");//\r
+   }
+}
+
+
+
+JavaScript
+
+=====
+Data Types
+
+Number:-
+- 5
+- 1.4
+- 3e2
+- 3e-2
+
+String:-
+- "Ahmed"
+- 'Ahmed'
+
+Boolean:-
+- true
+- false
+
+Array => Object
+- [10, 20, 30]
+
+Object:-
+- {name: "Ahmed", age: 17, country: "Eg"}
+- null
+
+typeof undefined = undefined
+=====
+
+=====
+Comments in js:-
+- // this is comment
+- /* this is comment */
+- /*
+     this is comment
+  */
+=====
+
+=====
+Variable in JS
+
+Ways to Declare a JavaScript Variable:-
+- using var
+- using let
+- using const
+- using nothing = var
+
+syntax:-
+- var a = "anything";
+- let b = "anything";
+- const c = "anything";
+- d = "anything";
+
+var:-
+- redeclare (Yes)
+- access before declare (undefined)
+- variable scoop drama [add in window] ()
+- block or function scope
+let:-
+- redeclare (No => Error)
+- access before declare (Error)
+- variable scoop drama ()
+- block or function scope
+const:-
+- redeclare (No => Error)
+- access before declare (Error)
+- variable scoop drama ()
+- block or function scope
+=====
+
+=====
+Arithmetic Operators in js
+
+operator:-  Description:-
+- +         - addition
+- -         - subtraction
+- *         - Multiplication
+- /         - Division
+- %         - Modulus (Remainder)
+- **        - Exponentiation (ES7)
+- ++        - Increment [post / pre]
+- --        - Decrement [post / pre]
+
+Examples:-
+let a = 1;
+console.log(1 + 1);   // Return 2
+console.log(1 - 1);   // Return 0
+console.log(5 * 5);   // Return 25
+console.log(5 / 5);   // Return 1
+console.log(5 % 6);   // Return 5
+console.log(5 ** 2);  // Return 25 
+console.log(++a);     // Return 2 (2)
+console.log(a++);     // Return 2 (3)000.0
+
+
+console.log(--a);     // Return 2 (2)
+console.log(a--);     // Return 2 (1)
+=====
+
+=====
+Unary Operator in JS
+
+Unary plus (+) [return number if its not a number]
+Unary negation (-) [return number if its not a number + negates it]
+
+unary plus Example:-
+examples                       return
+- +3                           - 3
+- +"3"                         - 3
+- +"-3"                        - -3
+- +"3.14"                      - 3.14
+- +"123e-5"                    - 0.00123
+- +"0xff"                      - 255
+- +true                        - 1
+- +false                       - 0
+- +null                        - 0
+- +"Infinity"                  - Infinity
+- +"not a number"              - NaN
+- +function (val){return val}  - NaN
+
+Unary negation Example:-
+examples                       return
+- -3                           - -3
+- -"3"                         - -3
+- -"-3"                        - 3
+- -"3.14"                      - -3.14
+- -"123e-5"                    - -0.00123
+- -"0xff"                      - -255
+- -true                        - -1
+- -false                       - -0
+- -null                        - -0
+- -"Infinity"                  - -Infinity
+- -"not a number"              - -NaN
+- -function (val){return val}  - -NaN
+=====
+
+=====
+Assignment Operators in JS
+
+operator    example     same as
+- =         - x = y     - x = y
+- +=        - x += y    - x = x + y
+- -=        - x -= y    - x = x - y
+- *=        - x *= y    - x = x * y
+- /=        - x /= y    - x = x / y
+- %=        - x %= y    - x = x % y
+- <<=       - x <<= y   - x = x << y
+- >>=       - x >>= y   - x = x >> y
+- >>>=      - x >>>= y  - x = x >>> y
+- &=        - x &= y    - x = x & y
+- ^=        - x ^= y    - x = x ^ y
+- |=        - x |= y    - x = x | y
+- **=       - x **= y   - x = x ** y
+
+example        return
+let x = 10;
+x = 10;        // 10
+x += 5;        // 15
+x -= 5;        // 10
+x *= 5;        // 100
+x /= 2;        // 5
+x %= 5;        // 0
+x <<= 1;       // 20
+x >>= 1;       // 5
+x >>>= 1;      // 5
+x &= 5;        // 0
+x ^= 5;        // 15
+x |= 5;        // 15
+x **= 2;       // 100
+=====
+
+====
+Number
+
+Method to Type Number:-
+- double precision
+- syntactic sugar "_"
+- e
+- e-
+- with decimal
+
+Example:-
+console.log(1000000);   // 1000000
+console.log(1_000_000); // 1000000
+console.log(1e6);       // 1000000
+console.log(1e-6);      // 0.000001
+console.log(1000000.0); // 1000000
+
+Constructor:-     Explain:-
+- Number()        - create a new number value
+
+Example:-
+console.log(number(123));  // 123
+=====
+
+=====
+Static Properties Number:-
+
+Properties:-               Explain:-
+- Number.EPSILON           - The smallest interval between two representable numbers
+- Number.MAX_SAFE_INTEGER  - the max safe integer in js
+- Number.MAX_VALUE         - The largest positive representable number
+- Number.MIN_SAFE_INTEGER  - the min safe integer in js
+- Number.MIN_VALUE         - The smallest positive representable number
+- Number.NaN               - Special "Not a Number" value
+- Number.NEGATIVE_INFINITY - Special value representing negative infinity
+- Number.POSITIVE_INFINITY - Special value representing infinity
+
+Example:-
+console.log(Number.EPSILON);            // 2.220446049250313e-16
+console.log(Number.MAX_SAFE_INTEGER);   // 9007199254740991
+console.log(Number.MAX_VALUE);          // 1.7976931348623157e+308
+console.log(Number.MIN_SAFE_INTEGER);   // -9007199254740991
+console.log(Number.MIN_VALUE);          // 5e-324
+console.log(Number.NaN);                // NaN
+console.log(Number.NEGATIVE_INFINITY);  // -infinity
+console.log(Number.POSITIVE_INFINITY);  // infinity
+=====
+
+=====
+Static Methods Number:-
+
+Properties:-               Explain:-
+- Number.isNaN()           - type check is number or not (Yes / No)
+- Number.isFinite()        - Determine whether the passed value is a finite number
+- Number.isInteger()       - Determine whether the passed value is an integer
+- Number.isSafeInteger()   - Determine whether the passed value is a safe integer
+(number between -(2^53 - 1) and 2^53 - 1)
+- Number.parseFloat(string)- return string number to number with decimals
+- Number.parseInt(string)  - return string number to number without decimals
+
+Example:-
+- console.log(Number.isNaN(5));             // false
+- console.log(Number.isNaN("A"));           // true
+- console.log(Number.isFinite(2));          // true
+- console.log(Number.isFinite(NaN));        // false
+- console.log(Number.isFinite(infinity));   // false
+- console.log(Number.isInteger(1));         // true
+- console.log(Number.isInteger(0.1));       // false
+- console.log(Number.isSafeInteger(3));     // true
+- console.log(Number.isSafeInteger(3.1));   // false
+- console.log(Number.parseFloat("5.5 hi")); // 5.5
+- console.log(Number.parseInt("5.5 hi"));   // 5
+=====
+
+=====
+Instance methods Number:-
+
+Properties:-                        Explain:-
+- toExponential(fractionDigits)     - Returns a string representing the number in exponential notation
+- toFixed(digits)                   - Returns a string representing the number in fixed-point notation
+- toPrecision(precision)            - Returns a string representing the number to a specified precision in fixed-point or exponential notation
+- toString([radix])                 - Return number to string
+- toLocaleString([locales [, options]])  - Returns a string with a language sensitive representation of this number. Overrides the
+
+Example:-
+console.log(77.1234.toExponential());        // 7.71234e+1
+console.log(77.1234.toExponential(2));       // 7.71e+1
+console.log(123.123.toFixed());              // 123
+console.log(123.123.toFixed(2));             // 123.12
+console.log(123.123.toPrecision());          // 123.123
+console.log(123.123.toPrecision(4));         // 123.1
+let num = 5;
+console.log(num.toString());                 // "5"
+const number = 123456.789;
+console.log(number.toLocaleString('ar-EG')); // ١٢٣٬٤٥٦٫٧٨٩
+=====
+
+=====
+Math Object
+
+Properties:-      Explain:-
+- round()         - The value of the given number rounded to the nearest integer
+- ceil()          - Round to the largest integer
+- floor()         - Rounding to the smallest integer
+- min()           - min number from list
+- max()           - max number from list
+- pow()           - see example
+- random()        - random number between 1, 0
+- trunc()         - remove decimal number
+
+Example:-                           Return:-
+console.log(Math.round(5.2));       // 5
+console.log(Math.round(5.8));       // 6
+console.log(Math.ceil(5.2));        // 6
+console.log(Math.ceil(5.8));        // 6
+console.log(Math.floor(5.2));       // 5
+console.log(Math.floor(5.8));       // 5
+console.log(Math.floor(-5.2));      // -6
+console.log(Math.min(10, 20, -30)); // -30
+console.log(Math.max(10, 20, -30)); // 20
+console.log(Math.pow(2, 2));        // 4
+console.log(Math.random());         // 0.123
+console.log(Math.trunc(5.5));       // 5
+12
+=====
+
+يحتفظ فقط بحوالي 17 منزلاً عشريًا من الدقة Numberيمكن أن
+2/0 = infinty
+-2/0 = -infinty
+
+=====
+String Methods
+
+Properties:-        Explain:-
+- charAt()          - access with index
+- length            - return number letters
+- trim()            - delete space on start and end string
+- toUpperCase()     - change string to upper case
+- toLowerCase()     - change string to lower case
+
+Example:-
+let x = 'hello';
+let a = "  hello world   "
+console.log(x.charAt(0));     // h
+console.log(x.charAt(1));     // e
+console.log(x.length);        // 5
+console.log(a.trim());        // hello world
+console.log(x.toUpperCase()); // HELLO
+console.log(x.toLowerCase()); // hello
+=====
+
+=====
+String Methods Part 2
+
+Properties:-    Explain:-
+- indexOf()     - find string in string
+- lastIndexOf() - // // revers
+- slice()       - cut string
+- repeat()      - repeat anything
+- split()       - cut string to array
+
+Syntax:-
+- indexOf(value [mand], start [opt, default 0])
+- lastIndexOf(value [mand], start [opt])
+- slice(start [mand], end [opt])
+- split(separator [opt], limit [opt])
+
+Example:-
+let x = "hello";
+console.log(x.indexOf("e"));     // 1
+console.log(x.indexOf("a"));     // -1
+console.log(x.indexOf("l", 1));  // 2
+console.log(x.lastIndexOf("l")); // 3
+console.log(x.slice(2));         // llo
+console.log(x.repeat(2));        // hellohello
+console.log(x.split("", 2));     // ["h", "e"]
+=====
+
+=====
+String Methods Part 3
+
+Properties:-    Explain:-
+- substring()   - cut string
+- substr()      - // //
+- includes()    - include specific word
+- startsWith()   - start with specific word
+- endsWith()     - end with specific word
+
+Syntax:-
+- substring(start [mand], end [opt])
+- substr(start [mand], number of character)
+- includes(value [mand], length [opt])
+- startsWith(value [mand], start [opt])
+- endsWith(value [mand], length [opt])
+
+Example:-
+let x = "hello";
+console.log(x.substring(1, 2));  // e
+console.log(x.substr(2, 2));     // ll
+console.log(x.includes("ll"));   // true
+console.log(x.includes("llh"));  // false
+console.log(x.startsWith("h"));  // true
+console.log(x.endsWith("o"));    // true
+=====
+
+=====
+Comparison Operators
+
+Operator:-    Explain:-
+- ==          - Returns true if the operands are equal
+- !=          - Returns true if the operands are not equal
+- ===         - Returns true if the operands are equal and of the same type
+- !==         - Returns true if the operands are of the same type but not equal
+- >           - Returns true if the left operand is greater then the right operand
+- >=          - Returns true if the left operand is greater then or equal to the right operand
+- <           - Returns true if the right operand is greater then the left operand
+- <=          - Returns true if the right operand is greater then or equal to the left operand
+
+Example:-   Return:-
+6 == 6      // true
+6 == "6"    // true
+6 == 5      // false
+6 != 6      // false
+6 != 5      // true
+6 === 6     // true
+6 === "6"   // false
+6 !== "6"   // true
+6 > 5       // true
+6 > "5"     // true
+6 > 6       // false
+6 >= 6      // true
+6 < 6       // false
+6 < 7       // true
+6 <= 6      // true
+=====
+
+=====
+Logical Operators
+
+Operator:-    Explain:-
+- &&          - And
+- ||          - Or
+- !           - Not
+
+Example:-
+console.log(true);                      // true
+console.log(!true);                     // false
+console.log(6 == 6);                    // true
+console.log(!(6 == 6));                 // false
+console.log(6 == 7 && 6 > 5 && 6 >= 6); // false
+console.log(6 == 6 || 6 > 7 || 6 >= 5); // true
+=====
