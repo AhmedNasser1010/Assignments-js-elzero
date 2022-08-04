@@ -1,4 +1,3 @@
-
 // ass-1
 console.log(100 == "100"); // true
 console.log(100 < 1000); // true

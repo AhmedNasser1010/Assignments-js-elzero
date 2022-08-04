@@ -2,6 +2,8 @@
 // Replace ? With Arithmetic Operators
 console.log(10 * 20 * 15 % 3 * 190 * 10 * 400);
 
+console.log('----------');
+
 // Ass-2
 let num = 3;
 
@@ -15,13 +17,15 @@ console.log(num + true + true + true);
 console.log(++num + true + true);
 
 // Solution Four
-console.log('-_-');
+console.log();
 
 // Solution Five
-console.log('D:');
+console.log();
 
 // Solution Six
-console.log(':P');
+console.log();
+
+console.log('----------');
 
 // Ass-3
 let num2 = "10";
@@ -37,6 +41,8 @@ console.log();
 
 // Solution Four
 console.log();
+
+console.log('----------');
 
 // Ass-4
 let points = 10;

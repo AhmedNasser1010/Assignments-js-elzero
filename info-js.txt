@@ -476,3 +476,206 @@ console.log(!(6 == 6));                 // false
 console.log(6 == 7 && 6 > 5 && 6 >= 6); // false
 console.log(6 == 6 || 6 > 7 || 6 >= 5); // true
 =====
+
+=====
+Control Flow
+
+- if
+- else if
+- else
+
+syntax:-
+if (condition) {
+   // block of code
+}
+--
+if (condition) {
+   // block of code
+} else if (condition) {
+   // block of code
+} else {
+   // block of code
+}
+
+example:-
+let num = 1;
+
+if (num > 0) {
+    console.log(true);
+}
+// Return true
+--
+let light = false;
+
+if (light === true) {
+    console.log("Light ON");
+} else if (light === false) {
+    console.log("Light OFF");
+} else {
+    console.log("Error");
+}
+// Return Light OFF
+=====
+
+=====
+Nested if
+
+syntax:-
+if (condition) {
+   // block of code
+} else {
+   if (condition) {
+      // block of code
+   } else {
+      if (condition) {
+         //block of code
+      }
+   }
+}
+
+example:-
+let A = 5;
+
+if (A > 6) {
+    console.log("A is smaller than 6");
+} else {
+    if (A == 10) {
+        console.log("A is equal than 10");
+    } else {
+        if (A >= 5) {
+            console.log("A is greater than 5 or equal");
+        }
+    }
+}
+// Return A is greater than 5 or equal
+=====
+
+=====
+conditional operator
+
+conditional:-
+- ? if true
+- : if false
+
+syntax:-
+condition ? // block of code : // block of code
+--
+condition
+   ? // block of code
+   : condition
+   ? // block of code
+   : condition
+   ? // block of code
+   : // block of code
+
+example:-
+let A = 5;
+A > 6 ? console.log("A is greater than 6") : console.log("A is smaller than 6");
+// Return A is smaller than 6
+--
+let B = 5;
+B == 6
+    ? console.log("B is equal 6")
+    : B > 6
+    ? console.log("B is greater than 6")
+    : B < 4
+    ? console.log("B is smaller than 4")
+    : console.log("B is greater than 4");
+// Return B is greater than 4
+=====
+
+=====
+Switch statement
+
+- switch (expression)
+- case
+- default
+- break
+
+Syntax:-
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+Example:-
+let Day = 0;
+switch (Day) {
+  case 0:
+  case 1:
+    console.log("Sunday");
+    break;
+  case 2:
+    console.log("Monday");
+    break;
+  case 3:
+    console.log("Tuesday");
+    break;
+  default:
+    console.log("Unknown Day");
+}
+// Return Sunday
+=====
+
+=====
+Arrays
+
+syntax:-
+- create array
+let variableName = ["Element", "Element", "Element"];
+let variableName = new Array("Element", "Element");
+- create nested array
+let variableName = ["Element", "Element", ["Element", "Element"]];
+- access of array elements
+variableName[indexOfElement]
+- change array elements
+variableName[indexOfElement] = "newElement";
+- change nested array
+variableName[indexOfNestedArray] = ["newElement", "newElement"];
+
+example:-
+- create array
+let newArray = ["A", "B", "C"];
+let newArray = new Array("A", "B");
+- create nested array
+let newArray = ["A", "B", "C", ["D", "E"]];
+- access of array elements
+console.log(`${newArray[0]}`);  // A
+- change array elements
+let arrayOne = ["A", "B", "C"];
+arrayOne[0] = "D";
+- change nested array
+let arrayTwo = ["A", "B", "C", ["D", "E"]];
+arrayTwo[3] = ["X", "Y"];
+
+note:-
+you can see type of array just type
+let info = ["A", "B"];
+console.log(Array.isArray(info)); // Returns true
+=====
+
+=====
+Array methods search
+
+- indexOf(search element, from index [opt])
+- lastIndexOf(search element, from index [opt])
+- includes(value to find, from index [opt]) [ES7]
+
+let myFriends = ["Ahmed", "Mohamed", "Sayed", "Ali", "Ahmed"];
+
+console.log(myFriends); // ['Ahmed', 'Mohamed', 'Sayed', 'Ali', 'Ahmed']
+
+console.log(myFriends.indexOf("Ahmed"));     // 0
+console.log(myFriends.indexOf("Ahmed", 2));  // 4
+
+console.log(myFriends.includes("Ahmed"));     // true
+console.log(myFriends.includes("Ahmed", 2));  // true
+
+console.log(myFriends.indexOf("Gamal"));  // -1
+=====
