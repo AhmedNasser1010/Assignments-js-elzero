@@ -679,3 +679,510 @@ console.log(myFriends.includes("Ahmed", 2));  // true
 
 console.log(myFriends.indexOf("Gamal"));  // -1
 =====
+
+=====
+Arrays methods [Sort]
+
+Properties:-             Explain:-
+- sort(function [opt])   - sorting the array alphabetical
+- reverse()              - revers array
+
+Example:-
+let myFriends = [10, "Sayed", "Mohamed", "90", 9000, 100, 20, "10", -20, -10];
+console.log(myFriends.sort());      // [-10, -20, 10, '10', 100, 20, '90', 9000, 'Mohamed', 'Sayed']
+console.log(myFriends.reverse());   // ['Sayed', 'Mohamed', 9000, '90', 20, 100, '10', 10, -20, -10]
+=====
+
+=====
+Arrays methods [Slicing]
+
+Properties:-
+- slice(start [opt], end [opt] not including end)
+-- slice() => all array
+-- default start => 0
+-- negative count from end
+-- if end undefined => slice to the end array
+-- return new array
+- splice(start [mand], delete count [opt] [0 no remove], the item to add [opt])
+-- if negative => start from the end
+
+Example:-
+let myFriends = ["Ahmed", "Sayed", "Ali", "Osama", "Gamal", "Ameer"];
+console.log(myFriends);
+console.log(myFriends.slice());         // ['Ahmed', 'Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1));        // ['Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1, 3));     // ['Sayed', 'Ali']
+console.log(myFriends.slice(-3));       // ['Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1, -2));    // ['Sayed', 'Ali', 'Osama']
+console.log(myFriends.slice(-4, -2));   // ['Ali', 'Osama']
+console.log(myFriends);                 // ['Ahmed', 'Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+
+myFriends.splice(1, 2, "Sameer", "Omar");
+console.log(myFriends);  // ['Ahmed', 'Sameer', 'Omar', 'Osama', 'Gamal', 'Ameer']
+=====
+
+=====
+Array methods [joining]
+
+Properties:-
+- concat(array, array) => return a new array
+- join(separator)
+
+Example:-
+let myFriends = ["Ahmed", "Sayed", "Ali", "Gamal", "Ameer"];
+let myNewFriends = ["Omar", "Sameh"];
+let schoolFriends = ["Haytham", "Shady"];
+
+let allFriends = myFriends.concat(myNewFriends, schoolFriends, "Gameel", [1, 2]);
+console.log(allFriends);
+// ['Ahmed', 'Sayed', 'Ali', 'Gamal', 'Ameer', 'Omar', 'Sameh', 'Haytham', 'Shady', 'Gameel', 1, 2]
+
+console.log(allFriends.join());                  // Ahmed,Sayed,Ali,Gamal,Ameer,Omar,Sameh,Haytham,Shady,Gameel,1,2
+console.log(allFriends.join(""));                // AhmedSayedAliGamalAmeerOmarSamehHaythamShadyGameel12
+console.log(allFriends.join(" # "));
+// Ahmed # Sayed # Ali # Gamal # Ameer # Omar # Sameh # Haytham # Shady # Gameel # 1 # 2
+console.log(allFriends.join("|"));               // Ahmed|Sayed|Ali|Gamal|Ameer|Omar|Sameh|Haytham|Shady|Gameel|1|2
+console.log(allFriends.join("|").toUpperCase()); // AHMED|SAYED|ALI|GAMAL|AMEER|OMAR|SAMEH|HAYTHAM|SHADY|GAMEEL|1|2
+=====
+
+=====
+For Loop
+
+# propertie:-
+- For
+
+# syntax:-
+for ([initialExpression]; [conditionExpression]; [incrementExpression]) {
+  // Code Block
+}
+
+# Example:-
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+Returns:-
+0
+1
+2
+3
+4
+
+# Second Example:-
+let myFriends = ["Osama", "Ahmed", "Sayed", "Ali"];
+
+// console.log(myFriends[0]);
+// console.log(myFriends[1]);
+// console.log(myFriends[2]);
+// console.log(myFriends[3]);
+// console.log(myFriends[4]);
+
+for (i = 0; i < myFriends.length; i++) {
+  console.log(myFriends[i]);
+}
+
+Returns:-
+Osama
+Ahmed
+Sayed
+Ali
+
+# Advanced Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+for (;;) {
+  console.log(products[i]);
+  i++;
+  if (i === products.length) break;
+}
+
+Returns:-
+Keyboard
+Mouse
+Pen
+Pad
+Monitor
+iPhone
+
+# Second Advanced Example:-
+let myFriends = [1, 2, "Osama", "Ahmed", 3, 4, "Sayed", 6, "Ali"];
+let onlyNames = [];
+
+for (let i = 0; i < myFriends.length; i++) {
+  if (typeof myFriends[i] === "string") {
+    onlyNames.push(myFriends[i]);
+  }
+}
+console.log(onlyNames);
+Returns:-
+['Osama', 'Ahmed', 'Sayed', 'Ali']
+=====
+
+=====
+Nested Loop
+
+Syntax:-
+for () {
+  // main loop
+  for () {
+    // nested loop
+  }
+}
+
+# Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+let colors = ["Red", "Green", "Black"];
+let models = ["2014", "2015"];
+
+for (let i = 0; i < products.length; i++) {
+  console.log("#".repeat(15));
+  console.log(`# ${products[i]}`);
+  console.log("#".repeat(15));
+  console.log("Color: ");
+  for (let j = 0; j < colors.length; j++) {
+    console.log(`- ${colors[j]}`);
+  }
+  console.log("Models: ");
+  for (let k = 0; k < models.length; k++) {
+    console.log(`- ${models[k]}`);
+  }
+}
+// Try it yourself
+
+# Product practice example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let colors = ["Red", "Green", "Blue"];
+let showCount = 3;
+
+document.write(`<h1>Show ${showCount} Products</h1>`);
+
+for (let i = 0; i < showCount; i++) {
+  document.write(`<div>`);
+  document.write(`<h3>[${i + 1}] ${products[i]}</h3>`);
+  for (let j = 0; j < colors.length; j++) {
+    document.write(`<p>${colors[j]}</p>`);
+  }
+  document.write(`<p>${colors.join(' | ')}</p>`);
+  document.write(`</div>`)
+}
+// Try it yourself
+=====
+
+=====
+Loop Control
+
+# Properties:-
+- Break
+- Continue
+- Label
+
+# Syntax:-
+for () {
+  // Code Block
+  break;
+}
+
+for () {
+  // Code Block
+  continue;
+}
+
+mainLoop: for () {
+  // Code Block
+  nestedLoop: for () {
+    // Code Block
+  }
+}
+
+# Break Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+
+for (let i = 0; i < products.length; i++) {
+  console.log(products[i]);
+  if (products[i] === "Pen") {
+    break;
+  }
+}
+// Try it yourself
+
+# Continue Example:-
+let products = ["Keyboard", 1, "Mouse", 2, "Pen", "Pad", 3, "Monitor"];
+
+for (let i = 0; i < products.length; i++) {
+  if (typeof products[i] === "number") {
+    continue;
+  }
+  console.log(products[i]);
+}
+// Try it yourself
+=====
+
+=====
+While
+
+Syntax:-
+while (condition) {
+  statement
+}
+
+Example:-
+let n = 0;
+
+while (n < 2) {
+  console.log(n);
+  n++;
+}
+// Returns 0 1
+
+Second example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+while (i < products.length) {
+  console.log(products[i]);
+  i++;
+}
+// Returns all products
+=====
+
+=====
+Do While
+
+Syntax:-
+do {
+  statement
+} while (condition);
+
+Example:-
+let i = 0;
+
+do {
+  console.log(i);
+  i++
+} while (false);
+// Returns 0
+
+Second example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+do {
+  console.log(products[i]);
+  i++
+} while (i < products.length);
+// Returns all products
+=====
+
+=====
+Function
+
+Syntax:-
+function nameOfFunc(argument, argument) {
+  // Code Block
+}
+
+Simple Example:-
+function sayHello() {
+  console.log(`Hello Ahmed`);
+}
+sayHello()
+
+Simple Example:-
+function sayHello(userName) {
+  console.log(`Hi ${userName}`);
+}
+sayHello("Ahmed");
+
+Advanced Example:-
+function sayHello(userName, Age) {
+  if (Age < 20) {
+    console.log("App is Not Suitable For You");
+  } else {
+    console.log(`Hello ${userName} Your Age is ${Age}`);
+  }
+}
+sayHello('Sayed', 21);
+sayHello('Ali', 22)
+sayHello('Ahmed', 17);
+
+Advanced Example:-
+function generateYears(start, end, exclude) {
+  for (let i = start; i <= end; i++) {
+    if (i === exclude) {
+      continue;
+    } else {
+      console.log(i);
+    }
+  }
+}
+generateYears(2004, 2022, 2020);
+=====
+
+=====
+Function Return
+
+Properties:-
+- return
+
+Example:-
+function calc(num1, num2) {
+  return num1 + num2;
+}
+let result = calc(5, 5);
+console.log(result);
+
+Advanced Example:-
+function generate(start, end) {
+  for (let i = start; i <= end; i++) {
+    if (i === 15) {
+      return `Interruptting`;
+    }
+    console.log(i);
+  }
+}
+generate(10, 20);
+=====
+
+=====
+Default function parameters
+
+Example:-
+function sayHi(user, age = "Unknown") {
+  // if (age === undefined) {
+  //   age = "Unknown"
+  // }
+  // age = age || "Unknown"
+  return `Hi ${user} Your Age is ${age}`;
+}
+console.log(sayHi("Ahmed"));
+=====
+
+=====
+Function Rest
+
+Example:-
+function calc(...number) {
+  let result = 0;
+  for (let i = 0; i < number.length; i++) {
+    result += number[i];
+  }
+  return `Final result ${result}`;
+}
+console.log(calc(50, 40, 10));
+// Returns 100
+=====
+
+=====
+Advanced Example Function
+
+function showInfo(us = "Un", ag = "Un", rt = 0, show = "Yes", ...sk) {
+  document.write(`<div>`);
+  document.write(`<h2>Welcome, ${us}</h2>`);
+  document.write(`<p>Age: ${us}</p>`);
+  document.write(`<p>Hour Rate: $${rt}</p>`);
+  if (show === "Yes") {
+    if (sk.length > 0) {
+      document.write(`<p>Skills: ${sk.join(" | ")}</p>`);
+    } else {
+      document.write(`<p>Skills: No Skills</p>`);
+    }
+  } else {
+    document.write(`<p>Skills is hidden</p>`);
+  }
+  document.write(`</div>`);
+}
+showInfo("Ahmed", 17, 20, "Yes", "Html", "CSS", "JS");
+=====
+
+=====
+Nested Function
+
+Example:-
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+  // Nested Function
+  function concatMsg() {
+    message = `${message} ${fName} ${lName}`;
+  }
+  concatMsg();
+  return message;
+}
+console.log(sayMessage("Ahmed", "Nasser"));
+// Hello Ahmed Nasser
+
+Second Example:-
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+
+  // Nested Function
+  function concatMsg() {
+    function getFullName() {
+      return `${fName} ${lName}`
+    }
+    return `${message} ${getFullName()}`;
+  }
+  return concatMsg();
+}
+console.log(sayMessage("Ahmed", "Nasser"));
+// same return
+=====
+
+=====
+Arrow Function
+
+Syntax 1:-
+(param) => expression
+
+Syntax 2:-
+(param1, param2) => expression
+
+Syntax 3:-
+(param) => {
+  // Code Block
+  // Code Block
+}
+
+Example 1:-
+// let print = function () {
+//   return 10;
+// }
+
+let print = () => 10;
+console.log(print());
+// 10
+Note: if you dont have param you can use _ seem ()
+
+Example 2:-
+// let print = function (num) {
+//   return num;
+// }
+
+let print = num => num;
+console.log(print(5));
+// 5
+
+Example 3:-
+// let print = function (num1, num2) {
+//   return num1 +num2;
+// }
+
+let print = (num1, num2) => num1 + num2;
+console.log(print(2, 2));
+// 4
+=====
+
+=====
+Function Self-invoking
+
+Syntax:-
+(function(){
+  // code block
+})();
+
+Example:-
+(function(num1, num2){
+  console.log(num1 + num2);
+})(2, 2);
+// 4
+=====
