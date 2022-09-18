@@ -1186,3 +1186,133 @@ Example:-
 })(2, 2);
 // 4
 =====
+
+=====
+Scope
+
+Note: var dont have any scope block and you can declared outside {}
+Note: if you don't use var,let,const before variable is auto create in global scope
+
+Block Scope:-
+{
+  let x = 2;
+}
+// x can NOT be used here
+
+{
+  var x = 2;
+}
+// x CAN be used here
+
+Local Scope:-
+// code here can NOT use carName
+
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+
+// code here can NOT use carName
+
+Global JavaScript Variables:-
+let carName = "Volvo";
+// code here can use carName
+
+function myFunction() {
+// code here can also use carName
+}
+
+Automatically Global:-
+function myFunction() {
+  carName = "Volvo";
+}
+myFunction();
+
+// code here can use carName
+=====
+
+=====
+Higher Order Functions
+
+Note:HOF mean Higher Order Function [this my cut].
+Note:HOF accepts function as parameters and/or returns function.
+
+.reduce() 
+.forEach() 
+.filter() 
+.map()
+=====
+
+=====
+HOF Map
+
+- methods creates a new array
+- populated with the results of calling a provided function on every element
+- in the calling array
+
+Syntax:-
+map(callBackFunc(Element, Index, Array) { }, thisArg)
+- Element => The current element being processed in the array
+- Index => The index of the current element being processed in the array
+- Array => The current array
+
+Example:-
+let myNums = [1, 2, 3, 4, 5, 6];
+let newArray = [];
+
+for (let i = 0; i< myNums.length; i++) {
+  newArray.push(myNums[i] + myNums[i]);
+}
+console.log(newArray);
+// [2, 4, 6, 8, 10, 12]
+
+// Same idea with map
+
+// Anonymous Func
+let addSelf = myNums.map(function(element, index, arr) {
+  return element + element;
+}, 10);
+console.log(addSelf);
+
+// Arrow Func
+let addSelfArrow = myNums.map((e) => e + e);
+console.log(addSelfArrow);
+
+// Func in Param
+function addition(e) {
+  return e + e;
+}
+let add = myNums.map(addition);
+console.log(add);
+=====
+
+=====
+HOF Map More Examples
+
+// Example 1
+let swappingCases = "aHMEd"
+
+let sw = swappingCases.split("").map(function(e) {
+  return e === e.toUpperCase() ? e.toLowerCase() : e.toUpperCase();
+}).join("");
+console.log(sw);
+// AhmeD
+
+// Example 2
+let invertedNumbers =[1, -10, -20, 15, 100, -30];
+
+inv = invertedNumbers.map(function(e) {
+  return -e;
+})
+console.log(inv);
+// [-1, 10, 20, -15, -100, 30]
+
+// Example 3
+let ignoreBooleans = "Ah12m5ed0"
+
+ign = ignoreBooleans.split("").map(function(e) {
+  return isNaN(parseInt(e)) ? e : "";
+}).join("");
+console.log(ign);
+// Ahmed
+=====
