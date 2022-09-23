@@ -1316,3 +1316,564 @@ ign = ignoreBooleans.split("").map(function(e) {
 console.log(ign);
 // Ahmed
 =====
+
+=====
+HOF Filter
+
+- methods create a new array
+- with all element that pass the implemented by the provided function
+
+Syntax:-
+- Same syntax HOF Map
+
+Example 1:-
+// Get friends with name starts with A
+let friends = ["Ahmed", "Sameh", "Sayed", "Asmaa", "Amgad", "Israa"];
+
+let filterFriends = friends.filter(function(e) {
+  return e.startsWith("A")// ? true : false;
+});
+console.log(filterFriends);
+// ['Ahmed', 'Asmaa', 'Amgad']
+
+Example 2:-
+// Get even number only
+let number = [11, 20, 2, 5, 17, 10];
+
+let evenNumber = number.filter(function(e) {
+  return e % 2 === 0;
+});
+
+console.log(evenNumber);
+// [20, 2, 10]
+
+Example 3:-
+// Filter words more then 4 characters
+let sentence = "I Love Foods Code Too Playing Much";
+
+let smallWords = sentence.split(" ").filter(function(e) {
+  return e.length <= 4;
+}).join(" ");
+console.log(smallWords);
+// I Love Code Too Much
+
+Example 4:-
+// Filter string + multiply
+let mix = "A13BS2ZX";
+
+let mixedContent = mix
+  .split("")
+  .filter(function(e) {
+    return  parseInt(e);
+  }).map(function(e) {
+    return e*e;
+  }).join("");
+console.log(mixedContent);
+// 194
+=====
+
+=====
+HOF Reduce
+
+- Method executes a reducer function on each element of the array
+- resulting in a single output value
+
+Syntax:-
+.reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, initialValue)
+- Accumulator => The accumulated value previously returned in the last invocation
+- current val => The current element being processed in the array
+- index => The index of the current element being processed in the array
+--- starts from index 0 if an initialVal is provided
+--- otherwise, it starts from index 1
+- Array => The current array
+
+Example:-
+let nums = [10, 20, 30, 40];
+
+let add = nums.reduce(function(Accumulator, currentVal, currentIndex, sourceArray) {
+  console.log(`Accumulator => ${Accumulator}`);
+  console.log(`Current Element => ${currentVal}`);
+  console.log(`Current Element Index => ${currentIndex}`);
+  console.log(`Source Array => ${sourceArray}`);
+  console.log(Accumulator + currentVal);
+  return Accumulator + currentVal
+});
+console.log(add);
+Returns
+  Accumulator => 10
+  Current Element => 20
+  Current Element Index => 1
+  Source Array => 10,20,30,40
+  30
+  Accumulator => 30
+  Current Element => 30
+  Current Element Index => 2
+  Source Array => 10,20,30,40
+  60
+  Accumulator => 60
+  Current Element => 40
+  Current Element Index => 3
+  Source Array => 10,20,30,40
+  100
+  100
+=====
+
+=====
+HOF Reduce Example
+
+Example 1:-
+let nums = [10, 20, 15, 40];
+
+let add = nums.reduce(function(acc, current) {
+  return acc + current
+}, 5);
+console.log(add);
+// 90
+
+Example 2:-
+let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test", "Propaganda_Two"];
+
+let check = theBiggest.reduce(function (acc, current) {
+  return acc.length > current.length ? acc : current;
+});
+console.log(check);
+// Propaganda_Two
+
+Example 3:-
+let removeChars = ["A", "@", "H", "@", "M", "@", "E", "D", "@"];
+
+let finalString = removeChars.filter(function (e) {
+  return !e.startsWith("@");
+}).reduce(function (acc, current) {
+  return `${acc}${current}`;
+});
+console.log(finalString);
+// AHMED
+=====
+
+=====
+HOF forEach
+
+- method executes a provided function once for each array element
+
+Syntax:-
+.forEach(callBackFunc(Element, Index, Array) { }, thisArg)
+
+Note:-
+- Doesn't return anything [undefined]
+- break will not break the loop
+
+Example:-
+HTML:
+<ul>
+  <li class="active">One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+<div class="content">
+  <div>Div One</div>
+  <div>Div Two</div>
+  <div>Div three</div>
+</div>
+JS:
+let allLis = document.querySelectorAll("ul li");
+let allDivs = document.querySelectorAll(".content div");
+
+allLis.forEach(function (e) {
+  e.onclick = function () {
+    // Remove active class from all elements
+    allLis.forEach(function (e) {
+      e.classList.remove("active");
+    });
+    // Add active class to this element
+    this.classList.add("active");
+    // Hide all divs
+    allDivs.forEach(function (e) {
+      e.style.display = "none";
+    });
+  };
+});
+// Try it yourself
+=====
+
+=====
+Array Flat
+
+Syntax:-
+nameOfArray.flat([Depth]);
+
+Example 1:-
+let arr1 = [1, 2, [3, 4]];
+arr1.flat(); 
+// [1, 2, 3, 4]
+
+Example 2:-
+let arr2 = [1, 2, [3, 4, [5, 6]]];
+arr2.flat();
+// [1, 2, 3, 4, [5, 6]]
+
+Example 3:-
+let arr3 = [1, 2, [3, 4, [5, 6]]];
+arr3.flat(2);
+// [1, 2, 3, 4, 5, 6]
+
+Example 4:-
+const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+arr4.flat(Infinity);
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Same idea without flat():-
+function flatten(arr) {
+  let result = [];
+
+  arr.forEach((i) => {
+    if (Array.isArray(i)) {
+      result.push(...flatten(i));
+    } else {
+      result.push(i);
+    }
+  })
+
+  return result;
+}
+
+// Usage
+let nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
+
+flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+=====
+
+=====
+Object
+
+Syntax:-
+let myVar = "country";
+
+let user = {name: "Ahmed", country: "Egypt"};
+
+Returns:-
+console.log(user.name); // Ahmed
+console.log(user.country); // Egypt
+console.log(user.myVar); // undefined
+console.log(user[myVar]); // Egypt
+=====
+
+=====
+Nested Object
+
+Syntax:-
+let user = {
+  name: "Ahmed",
+  age: 17,
+  skills: ["HTML", "CSS", "JS"],
+  available: false,
+  addresses: {
+    ksa: "Riyadh",
+    egypt: {
+      one: "Cairo",
+      two: "Giza",
+    },
+  },
+  checkAv: function () {
+    if (user.available === true) {
+      return `Available For Work`;
+    } else {
+      return `Not Available`;
+    }
+  },
+};
+
+Returns:-
+console.log(user.name); // Ahmed
+console.log(user.skills[0]); // HTML
+console.log(user.addresses.ksa); // Riyadh
+console.log(user.addresses.egypt.two); // Giza
+console.log(user.checkAv()); // Not Available
+=====
+
+=====
+Other Way To Type Object
+
+let user = new Object({
+  age: 17,
+});
+
+console.log(user); // {age: 17}
+
+user.age = 18;
+user["country"] = "Egypt";
+
+user.sayHi = function () {
+  return `Hi`;
+};
+
+console.log(user); // {age: 18, country: 'Egypt', sayHi: ƒ}
+console.log(user.age); // 18
+console.log(user.country); // Egypt
+console.log(user.sayHi()); // Hi
+=====
+
+=====
+Object Keyword This
+
+Examples:-
+console.log(this); // Window
+console.log(this === window); // true
+
+myVAr = 100;
+
+console.log(window.myVAr); // 100
+console.log(this.myVAr); // 100
+
+function sayHello() {
+  console.log(this);
+  return this;
+}
+sayHello(); // window
+
+console.log(sayHello() === window); // true
+
+document.getElementById("cl").onclick = function () {
+  console.log(this); // <button id="cl">Button</button>
+};
+
+let user = {
+  age: 17,
+  ageInDay: function () {
+    console.log(this);
+    return this.age * 365;
+  },
+};
+
+console.log(user.age); // 17
+console.log(user.ageInDay()); // 6205
+=====
+
+=====
+Create Object With Create Methods
+
+Examples:-
+let user = {
+  age: 17,
+  doubleAge: function () {
+    return this.age * 2;
+  },
+};
+
+console.log(user); // {age: 17, doubleAge: ƒ}
+console.log(user.age); // 17
+console.log(user.doubleAge()); // 34
+
+let obj = Object.create({});
+
+obj.a = 100;
+
+console.log(obj); // {a: 100}
+
+let copyObj = Object.create(user);
+
+copyObj.age = 50;
+
+console.log(copyObj); // {age: 50}
+console.log(copyObj.age); // 50
+console.log(copyObj.doubleAge()); // 100
+=====
+
+=====
+Create Object With Assign Methods
+
+Examples:-
+let obj1 = {
+  prop1: 1,
+  meth1: function () {
+    return this.prop1;
+  },
+};
+
+let obj2 = {
+  prop2: 2,
+  meth2: function () {
+    return this.prop2;
+  },
+};
+
+let targetObject = {
+  prop1: 100,
+  prop3: 3,
+};
+
+let finalObject = Object.assign(targetObject, obj1, obj2);
+
+finalObject.prop1 = 200;
+finalObject.prop4 = 4;
+
+console.log(finalObject);
+// {prop1: 200, prop3: 3, prop2: 2, meth1: ƒ, meth2: ƒ, …}
+
+let newObject = Object.assign({}, obj1, {prop5: 5, prop6: 6});
+console.log(newObject);
+// {prop1: 1, prop5: 5, prop6: 6, meth1: ƒ}
+=====
+
+=====
+Object More Info
+
+Object hasOwnProperty():-
+
+let object1 = {};
+object1.property1 = 42;
+
+console.log(object1.hasOwnProperty('property1'));
+// output: true
+
+console.log(object1.hasOwnProperty('toString'));
+// output: false
+
+console.log(object1.hasOwnProperty('hasOwnProperty'));
+// output: false
+
+Object Key:-
+const object1 = {
+  a: 'someString',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+
+Object Values:-
+const object1 = {
+  a: 'someString',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+// expected output: Array ["someString", 42, false]
+
+Object Length:-
+let object = {
+  user:"hello",
+  password:"123"
+}
+
+console.log(Object.keys(object).length)
+// 2
+=====
+
+=====
+Document Object Model Selectors
+
+let myIdElement = document.getElementById("idName");
+let myTagElement = document.getElementsByTagName("p");
+let myClassElement = document.getElementsByClassName("className");
+let myQueryElement = document.querySelector(".my-span");
+let myQueryElementAll = document.querySelectorAll(".my-span");
+
+console.log(myIdElement); // <h1 id="idName">Welcome</h1>
+console.log(myTagElement[1]); // <p>Hello</p>
+console.log(myClassElement[0]); // <p class="className">Hi</p>
+console.log(myQueryElement); // <span class="my-span">Span</span>
+console.log(myQueryElementAll); // NodeList(2) [span.my-span, span.my-span]
+
+console.log(document.title); // test
+console.log(document.body); // <body>...</body>
+console.log(document.forms[0].one.value); // Hello
+console.log(document.links[0].href); // https://google.com/
+=====
+
+=====
+DOM Get / Set Element Content And Attributes
+
+- innerHTML
+- textContent
+- getAttribute
+- setAttribute
+
+let myElement = document.querySelector('.js');
+
+console.log(myElement.innerHTML); // Javascript <span>Div</span> &lt;span&gt;
+console.log(myElement.textContent); // Javascript Div <span>
+
+myElement.innerHTML = "Text From <span>Script.js</span> File";
+myElement.textContent = "Text From <span>Script.js</span> File";
+
+document.images[0].src = "https://google.com";
+document.images[0].alt = "Alternate";
+document.images[0].title = "picture";
+document.images[0].id = "pic";
+document.images[0].className = "img";
+
+let myLink = document.querySelector(".link");
+
+console.log(myLink.getAttribute("class")); // link
+console.log(myLink.getAttribute("href")); // #
+
+myLink.setAttribute("href", "https://twitter.com");
+myLink.setAttribute("title", "Twitter");
+=====
+
+=====
+DOM Check Attr
+
+- .attributes
+- .hasAttribute
+- .hasAttributes
+- .removeAttribute
+
+console.log(document.getElementsByTagName("p")[0].attributes);
+// NamedNodeMap {0: class, 1: title, 2: data-src, class: class, title: title, data-src: data-src, length: 3}
+
+let myP = document.getElementsByTagName("p")[0];
+
+if (myP.hasAttribute("data-src")) {
+  if (myP.getAttribute("data-src") === "") {
+    myP.removeAttribute("data-src");
+  } else {
+    myP.setAttribute("data-src", "New Value");
+  }
+} else {
+  console.log(`Not Found`);
+}
+
+if (myP.hasAttributes()) {
+  console.log(`Has Attributes`);
+}
+// Has Attributes
+
+if (document.getElementsByTagName("div")[0].hasAttributes()) {
+  console.log(`Has Attributes`);
+} else {
+  console.log(`Not Found Attribute`);
+}
+// Not Found Attribute
+=====
+
+=====
+DOM Create Elements
+
+- .createElement
+- .createComment
+- .createTextNode
+- .createAttribute
+- .appendChild
+
+let myElement = document.createElement("div");
+let myAttr = document.createAttribute("data-custom");
+let myText = document.createTextNode("Product One");
+let myComment = document.createComment("This Is Div");
+
+myElement.className = "product";
+myElement.setAttributeNode(myAttr);
+myElement.setAttribute("data-test", "Testing");
+
+// Append Comment To Element
+myElement.appendChild(myComment);
+
+// Append Text To Element
+myElement.appendChild(myText);
+
+// Append Element To Body
+document.body.appendChild(myElement);
+=====
