@@ -1763,27 +1763,51 @@ console.log(Object.keys(object).length)
 =====
 
 =====
+/*
+  HTML:-
+  <span class="my-span">My Span</span>
+  <p>Hello Paragraph 1</p>
+  <p>Hello Paragraph 2</p>
+  <div id="my-div">Hello Div</div>
+  <form action="">
+    <input type="text" name="one" value="Hello">
+  </form>
+  <form action="">
+    <input type="text" name="two" value="Hello">
+  </form>
+  <a href="https://google.com">Google</a>
+  <a href="https://facebook.com">Facebook</a>
+
+*/
+
 Document Object Model Selectors
 
-let myIdElement = document.getElementById("idName");
+let myIdElement = document.getElementById("my-div");
 let myTagElement = document.getElementsByTagName("p");
-let myClassElement = document.getElementsByClassName("className");
+let myClassElement = document.getElementsByClassName("my-span");
 let myQueryElement = document.querySelector(".my-span");
 let myQueryElementAll = document.querySelectorAll(".my-span");
 
-console.log(myIdElement); // <h1 id="idName">Welcome</h1>
-console.log(myTagElement[1]); // <p>Hello</p>
-console.log(myClassElement[0]); // <p class="className">Hi</p>
-console.log(myQueryElement); // <span class="my-span">Span</span>
-console.log(myQueryElementAll); // NodeList(2) [span.my-span, span.my-span]
+console.log(myIdElement); // <div id="my-div">Hello Div</div>
+console.log(myTagElement[0]); // <p>Hello Paragraph 1</p>
+console.log(myClassElement[0]); // <span class="my-span">My Span</span>
+console.log(myQueryElement); // <span class="my-span">My Span</span>
+console.log(myQueryElementAll); // NodeList [span.my-span]
 
 console.log(document.title); // test
 console.log(document.body); // <body>...</body>
 console.log(document.forms[0].one.value); // Hello
-console.log(document.links[0].href); // https://google.com/
+console.log(document.links[1].href); // https://facebook.com/
 =====
 
 =====
+/*
+  HTML:-
+  <div class="js">javascript <span>Div</span> &lt;span&gt;</div>
+  <img src="" alt="">
+  <a href="#" class="link">Google</a>
+*/
+
 DOM Get / Set Element Content And Attributes
 
 - innerHTML
@@ -1815,6 +1839,12 @@ myLink.setAttribute("title", "Twitter");
 =====
 
 =====
+/*
+  HTML:-
+  <div>Div</div>
+  <p class="para" title="Paragraph" data-src="Testing"></p>
+*/
+
 DOM Check Attr
 
 - .attributes
@@ -1876,4 +1906,100 @@ myElement.appendChild(myText);
 
 // Append Element To Body
 document.body.appendChild(myElement);
+
+/*
+  HTML Result:-
+  <div class="product" data-custom data-test="Testing">
+  <!-- This Is Div -->
+  "Product One"
+  </div>
+*/
+=====
+
+=====
+DOM Deal With Children
+
+- children
+- childNode
+- firstChild
+- lastChild
+- firstElementChild
+- lastElementChild
+
+Usage:-
+/*
+  HTML:-
+  <div><!--- Ahmed -->Hello Div<p>Hello P</p><span>Hello Span</span><!-- Comment --></div>
+*/
+
+let myElement = document.querySelector("div");
+
+console.log(myElement); // <div>...</div>
+console.log(myElement.children); // HTMLCollection(2) [p, span]
+console.log(myElement.children[0]); // <p>Hello P</p>
+console.log(myElement.childNodes); // NodeList(5) [comment, text, p, span, comment]
+console.log(myElement.childNodes[0]); // <!--- Ahmed -->
+
+console.log(myElement.firstChild); // <!--- Ahmed -->
+console.log(myElement.lastChild); // <!-- Comment -->
+
+console.log(myElement.firstElementChild); // <p>Hello P</p>
+console.log(myElement.lastElementChild); // <span>Hello Span</span>
+=====
+
+=====
+DOM Events
+
+- onclick       => do something after click on element
+- oncontextmenu =>  when the user right-clicks on an element to open the context menu
+- onmuseseenter => when mouse move into element do something
+- onmuseleave   => when mouse move into element do something
+
+- onload        => when object on load do something
+- onscroll      => when scroll page do something
+- onresize      => when resize page do something
+
+- onfocus       => when focus the input field do something
+- onblur        => when you leave the input field do something
+- onsubmit      => when do submit form do something 
+=====
+
+=====
+DOM Event Prevent Default
+
+Usage:-
+/*
+  HTML:-
+  <form action="">
+    <input type="text" name="username" placeholder="Max 10 Chars Only">
+    <input type="text" name="age" placeholder="Cant Be Empty">
+    <input type="submit" name="submit" value="Submit Data">
+  </form>
+  <a href="https://google.com">Google</a>
+*/
+
+let userInput = document.querySelector("[name='username']");
+let ageInput = document.querySelector("[name='age']");
+
+document.forms[0].onsubmit = function (e) {
+  let userValid = false;
+  let ageValid = false;
+
+  if (userInput.value !== "" && userInput.value.length <= 10) {
+    userValid = true;
+  }
+
+  if (ageInput.value !== "" && ageInput.value <= 99 && ageInput.value >= 16) {
+    ageValid = true;
+  }
+
+  if (userValid === false || ageValid === false) {
+    e.preventDefault();
+  }
+};
+
+document.links[0].onclick = function (event) {
+  console.log(event);
+  event.preventDefault();
+};
 =====
