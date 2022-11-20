@@ -3295,3 +3295,67 @@ console.log(/(\bspam|spam\b)/ig.test("Osama")); // false
 console.log(/(\bspam|spam\b)/ig.test("1Spam")); // true
 console.log(/(\bspam|spam\b)/ig.test("Spam1")); // true
 =====
+
+=====
+Regular Expression Quantifiers Part 1
+
+n+    => One Or More
+n*    => zero or more
+n?    => zero or one
+
+Examples:-
+
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // All Emails
+// let mailsRe = /\w+@\w+.(com|net)/ig; // ['osama@gmail.com', 'elzero@gmail.net']
+let mailsRe = /\w+@\w+.\w+/ig;
+console.log(mails.match(mailsRe)); // ['o@nn.sa', 'osama@gmail.com', 'elzero@gmail.net', 'osama@mail.ru']
+
+let nums = "0110 10 150 05120 0560 350 00"; // 0 Numbers Or No 0
+let numsRe = /0\d*0/ig;
+console.log(nums.match(numsRe)); // ['0110', '05120', '0560', '00']
+
+let urls = "https://google.com http://www.website.net web.com"; // http + https
+let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+console.log(urls.match(urlsRe)); // ['https://google.com', 'http://www.website.net', 'web.com']
+=====
+
+=====
+Regular Expression Quantifiers Part 2
+
+n{x}   => Number of
+n{x,y} => Range
+n{x,}  => At Least x
+
+Examples:-
+
+let serials = "S100S S3000S S50000S S950000S";
+
+console.log(serials.match(/s\d{3}s/ig)); // S[Three Number]S
+// ['S100S']
+console.log(serials.match(/s\d{4,5}s/ig)); // S[Four Or Five Number]S
+// ['S3000S', 'S50000S']
+console.log(serials.match(/s\d{4,}s/ig)); // S[At Least Four]S
+// ['S3000S', 'S50000S', 'S950000S']
+=====
+
+=====
+Regular Expression Quantifiers Part 3
+
+$  => End With Something
+^  => Start With Something
+?= => Followed By Something
+?! => Not Followed By Something
+
+Examples:-
+
+let myString = "We Love Programming";
+let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+console.log(/ing$/ig.test(myString)); // true
+console.log(/^we/ig.test(myString)); // true
+console.log(/lz$/ig.test(names)); // true
+console.log(/^\d/ig.test(names)); // true
+
+console.log(names.match(/\d\w{5}(?=Z)/ig)); // ['1Osama', '2Ahmed', '5Gamal']
+console.log(names.match(/\d\w{8}(?!Z)/ig)); // ['3Mohammed']
+=====
