@@ -1,0 +1,3297 @@
+console method
+- log
+- error
+- table
+- group
+- groupEnd
+
+document method
+- write
+- querySelector
+
+window method
+- alert
+
+Data Type
+- console.log(Typeof "Ahmed Nasser"); => string
+- console.log(Typeof 123); => number
+- console.log(Typeof [1, 2, 3]); => array,object
+- console.log(Typeof [a, b, c]); => array,object
+- console.log(Typeof {name: "Ahmed", age: 17, country: "eg"}); => object
+- console.log(Typeof true); => boolean
+- console.log(Typeof false); => boolean
+- console.log(Typeof undefined); => undefined
+- console.log(Typeof null); => boolean
+
+?
+NaN = [N]ot [a] [N]umber
+<script defer> [defer] => Execute the code after the page is loaded <!>important<!>
+
+Character Escape Sequences
+- \' single quote
+- \" double quote
+- \\ backslash
+- \n new line
+- \r carriage return
+- \t tab
+- \b backspace
+- \f form feed
+- \v vertical tab (Internet Explorer 9 and older treats '\v as 'v instead of a vertical tab ('\x0B). If cross-browser compatibility is a concern, use \x0B instead of \v.)
+- \0 null character (U+0000 NULL) (only if the next character is not a decimal digit; else it is an octal escape sequence)
+- \xFF character represented by the hexadecimal byte "FF"
+Note that the \v and \0 escapes are not allowed in JSON strings.
+
+Example code:
+
+class hw {
+   public static void main() {
+       System.out.println("Using 'Back slash n': \n It will move the words to the nxt line");//\n
+       System.out.println("Using 'Back slash tab': \t It will move the Word by one tab");//\t
+       System.out.println("Using 'backslash R' \r It will do the same as back slash n'");//\r
+   }
+}
+
+
+
+JavaScript
+
+=====
+Data Types
+
+Number:-
+- 5
+- 1.4
+- 3e2
+- 3e-2
+
+String:-
+- "Ahmed"
+- 'Ahmed'
+
+Boolean:-
+- true
+- false
+
+Array => Object
+- [10, 20, 30]
+
+Object:-
+- {name: "Ahmed", age: 17, country: "Eg"}
+- null
+
+typeof undefined = undefined
+=====
+
+=====
+Comments in js:-
+- // this is comment
+- /* this is comment */
+- /*
+     this is comment
+  */
+=====
+
+=====
+Variable in JS
+
+Ways to Declare a JavaScript Variable:-
+- using var
+- using let
+- using const
+- using nothing = var
+
+syntax:-
+- var a = "anything";
+- let b = "anything";
+- const c = "anything";
+- d = "anything";
+
+var:-
+- redeclare (Yes)
+- access before declare (undefined)
+- variable scoop drama [add in window] ()
+- block or function scope
+let:-
+- redeclare (No => Error)
+- access before declare (Error)
+- variable scoop drama ()
+- block or function scope
+const:-
+- redeclare (No => Error)
+- access before declare (Error)
+- variable scoop drama ()
+- block or function scope
+=====
+
+=====
+Arithmetic Operators in js
+
+operator:-  Description:-
+- +         - addition
+- -         - subtraction
+- *         - Multiplication
+- /         - Division
+- %         - Modulus (Remainder)
+- **        - Exponentiation (ES7)
+- ++        - Increment [post / pre]
+- --        - Decrement [post / pre]
+
+Examples:-
+let a = 1;
+console.log(1 + 1);   // Return 2
+console.log(1 - 1);   // Return 0
+console.log(5 * 5);   // Return 25
+console.log(5 / 5);   // Return 1
+console.log(5 % 6);   // Return 5
+console.log(5 ** 2);  // Return 25 
+console.log(++a);     // Return 2 (2)
+console.log(a++);     // Return 2 (3)000.0
+
+
+console.log(--a);     // Return 2 (2)
+console.log(a--);     // Return 2 (1)
+=====
+
+=====
+Unary Operator in JS
+
+Unary plus (+) [return number if its not a number]
+Unary negation (-) [return number if its not a number + negates it]
+
+unary plus Example:-
+examples                       return
+- +3                           - 3
+- +"3"                         - 3
+- +"-3"                        - -3
+- +"3.14"                      - 3.14
+- +"123e-5"                    - 0.00123
+- +"0xff"                      - 255
+- +true                        - 1
+- +false                       - 0
+- +null                        - 0
+- +"Infinity"                  - Infinity
+- +"not a number"              - NaN
+- +function (val){return val}  - NaN
+
+Unary negation Example:-
+examples                       return
+- -3                           - -3
+- -"3"                         - -3
+- -"-3"                        - 3
+- -"3.14"                      - -3.14
+- -"123e-5"                    - -0.00123
+- -"0xff"                      - -255
+- -true                        - -1
+- -false                       - -0
+- -null                        - -0
+- -"Infinity"                  - -Infinity
+- -"not a number"              - -NaN
+- -function (val){return val}  - -NaN
+=====
+
+=====
+Assignment Operators in JS
+
+operator    example     same as
+- =         - x = y     - x = y
+- +=        - x += y    - x = x + y
+- -=        - x -= y    - x = x - y
+- *=        - x *= y    - x = x * y
+- /=        - x /= y    - x = x / y
+- %=        - x %= y    - x = x % y
+- <<=       - x <<= y   - x = x << y
+- >>=       - x >>= y   - x = x >> y
+- >>>=      - x >>>= y  - x = x >>> y
+- &=        - x &= y    - x = x & y
+- ^=        - x ^= y    - x = x ^ y
+- |=        - x |= y    - x = x | y
+- **=       - x **= y   - x = x ** y
+
+example        return
+let x = 10;
+x = 10;        // 10
+x += 5;        // 15
+x -= 5;        // 10
+x *= 5;        // 100
+x /= 2;        // 5
+x %= 5;        // 0
+x <<= 1;       // 20
+x >>= 1;       // 5
+x >>>= 1;      // 5
+x &= 5;        // 0
+x ^= 5;        // 15
+x |= 5;        // 15
+x **= 2;       // 100
+=====
+
+====
+Number
+
+Method to Type Number:-
+- double precision
+- syntactic sugar "_"
+- e
+- e-
+- with decimal
+
+Example:-
+console.log(1000000);   // 1000000
+console.log(1_000_000); // 1000000
+console.log(1e6);       // 1000000
+console.log(1e-6);      // 0.000001
+console.log(1000000.0); // 1000000
+
+Constructor:-     Explain:-
+- Number()        - create a new number value
+
+Example:-
+console.log(number(123));  // 123
+=====
+
+=====
+Static Properties Number:-
+
+Properties:-               Explain:-
+- Number.EPSILON           - The smallest interval between two representable numbers
+- Number.MAX_SAFE_INTEGER  - the max safe integer in js
+- Number.MAX_VALUE         - The largest positive representable number
+- Number.MIN_SAFE_INTEGER  - the min safe integer in js
+- Number.MIN_VALUE         - The smallest positive representable number
+- Number.NaN               - Special "Not a Number" value
+- Number.NEGATIVE_INFINITY - Special value representing negative infinity
+- Number.POSITIVE_INFINITY - Special value representing infinity
+
+Example:-
+console.log(Number.EPSILON);            // 2.220446049250313e-16
+console.log(Number.MAX_SAFE_INTEGER);   // 9007199254740991
+console.log(Number.MAX_VALUE);          // 1.7976931348623157e+308
+console.log(Number.MIN_SAFE_INTEGER);   // -9007199254740991
+console.log(Number.MIN_VALUE);          // 5e-324
+console.log(Number.NaN);                // NaN
+console.log(Number.NEGATIVE_INFINITY);  // -infinity
+console.log(Number.POSITIVE_INFINITY);  // infinity
+=====
+
+=====
+Static Methods Number:-
+
+Properties:-               Explain:-
+- Number.isNaN()           - type check is number or not (Yes / No)
+- Number.isFinite()        - Determine whether the passed value is a finite number
+- Number.isInteger()       - Determine whether the passed value is an integer
+- Number.isSafeInteger()   - Determine whether the passed value is a safe integer
+(number between -(2^53 - 1) and 2^53 - 1)
+- Number.parseFloat(string)- return string number to number with decimals
+- Number.parseInt(string)  - return string number to number without decimals
+
+Example:-
+- console.log(Number.isNaN(5));             // false
+- console.log(Number.isNaN("A"));           // true
+- console.log(Number.isFinite(2));          // true
+- console.log(Number.isFinite(NaN));        // false
+- console.log(Number.isFinite(infinity));   // false
+- console.log(Number.isInteger(1));         // true
+- console.log(Number.isInteger(0.1));       // false
+- console.log(Number.isSafeInteger(3));     // true
+- console.log(Number.isSafeInteger(3.1));   // false
+- console.log(Number.parseFloat("5.5 hi")); // 5.5
+- console.log(Number.parseInt("5.5 hi"));   // 5
+=====
+
+=====
+Instance methods Number:-
+
+Properties:-                        Explain:-
+- toExponential(fractionDigits)     - Returns a string representing the number in exponential notation
+- toFixed(digits)                   - Returns a string representing the number in fixed-point notation
+- toPrecision(precision)            - Returns a string representing the number to a specified precision in fixed-point or exponential notation
+- toString([radix])                 - Return number to string
+- toLocaleString([locales [, options]])  - Returns a string with a language sensitive representation of this number. Overrides the
+
+Example:-
+console.log(77.1234.toExponential());        // 7.71234e+1
+console.log(77.1234.toExponential(2));       // 7.71e+1
+console.log(123.123.toFixed());              // 123
+console.log(123.123.toFixed(2));             // 123.12
+console.log(123.123.toPrecision());          // 123.123
+console.log(123.123.toPrecision(4));         // 123.1
+let num = 5;
+console.log(num.toString());                 // "5"
+const number = 123456.789;
+console.log(number.toLocaleString('ar-EG')); // ١٢٣٬٤٥٦٫٧٨٩
+=====
+
+=====
+Math Object
+
+Properties:-      Explain:-
+- round()         - The value of the given number rounded to the nearest integer
+- ceil()          - Round to the largest integer
+- floor()         - Rounding to the smallest integer
+- min()           - min number from list
+- max()           - max number from list
+- pow()           - see example
+- random()        - random number between 1, 0
+- trunc()         - remove decimal number
+
+Example:-                           Return:-
+console.log(Math.round(5.2));       // 5
+console.log(Math.round(5.8));       // 6
+console.log(Math.ceil(5.2));        // 6
+console.log(Math.ceil(5.8));        // 6
+console.log(Math.floor(5.2));       // 5
+console.log(Math.floor(5.8));       // 5
+console.log(Math.floor(-5.2));      // -6
+console.log(Math.min(10, 20, -30)); // -30
+console.log(Math.max(10, 20, -30)); // 20
+console.log(Math.pow(2, 2));        // 4
+console.log(Math.random());         // 0.123
+console.log(Math.trunc(5.5));       // 5
+12
+=====
+
+يحتفظ فقط بحوالي 17 منزلاً عشريًا من الدقة Numberيمكن أن
+2/0 = infinty
+-2/0 = -infinty
+
+=====
+String Methods
+
+Properties:-        Explain:-
+- charAt()          - access with index
+- length            - return number letters
+- trim()            - delete space on start and end string
+- toUpperCase()     - change string to upper case
+- toLowerCase()     - change string to lower case
+
+Example:-
+let x = 'hello';
+let a = "  hello world   "
+console.log(x.charAt(0));     // h
+console.log(x.charAt(1));     // e
+console.log(x.length);        // 5
+console.log(a.trim());        // hello world
+console.log(x.toUpperCase()); // HELLO
+console.log(x.toLowerCase()); // hello
+=====
+
+=====
+String Methods Part 2
+
+Properties:-    Explain:-
+- indexOf()     - find string in string
+- lastIndexOf() - // // revers
+- slice()       - cut string
+- repeat()      - repeat anything
+- split()       - cut string to array
+
+Syntax:-
+- indexOf(value [mand], start [opt, default 0])
+- lastIndexOf(value [mand], start [opt])
+- slice(start [mand], end [opt])
+- split(separator [opt], limit [opt])
+
+Example:-
+let x = "hello";
+console.log(x.indexOf("e"));     // 1
+console.log(x.indexOf("a"));     // -1
+console.log(x.indexOf("l", 1));  // 2
+console.log(x.lastIndexOf("l")); // 3
+console.log(x.slice(2));         // llo
+console.log(x.repeat(2));        // hellohello
+console.log(x.split("", 2));     // ["h", "e"]
+=====
+
+=====
+String Methods Part 3
+
+Properties:-    Explain:-
+- substring()   - cut string
+- substr()      - // //
+- includes()    - include specific word
+- startsWith()   - start with specific word
+- endsWith()     - end with specific word
+
+Syntax:-
+- substring(start [mand], end [opt])
+- substr(start [mand], number of character)
+- includes(value [mand], length [opt])
+- startsWith(value [mand], start [opt])
+- endsWith(value [mand], length [opt])
+
+Example:-
+let x = "hello";
+console.log(x.substring(1, 2));  // e
+console.log(x.substr(2, 2));     // ll
+console.log(x.includes("ll"));   // true
+console.log(x.includes("llh"));  // false
+console.log(x.startsWith("h"));  // true
+console.log(x.endsWith("o"));    // true
+=====
+
+=====
+Comparison Operators
+
+Operator:-    Explain:-
+- ==          - Returns true if the operands are equal
+- !=          - Returns true if the operands are not equal
+- ===         - Returns true if the operands are equal and of the same type
+- !==         - Returns true if the operands are of the same type but not equal
+- >           - Returns true if the left operand is greater then the right operand
+- >=          - Returns true if the left operand is greater then or equal to the right operand
+- <           - Returns true if the right operand is greater then the left operand
+- <=          - Returns true if the right operand is greater then or equal to the left operand
+
+Example:-   Return:-
+6 == 6      // true
+6 == "6"    // true
+6 == 5      // false
+6 != 6      // false
+6 != 5      // true
+6 === 6     // true
+6 === "6"   // false
+6 !== "6"   // true
+6 > 5       // true
+6 > "5"     // true
+6 > 6       // false
+6 >= 6      // true
+6 < 6       // false
+6 < 7       // true
+6 <= 6      // true
+=====
+
+=====
+Logical Operators
+
+Operator:-    Explain:-
+- &&          - And
+- ||          - Or
+- !           - Not
+
+Example:-
+console.log(true);                      // true
+console.log(!true);                     // false
+console.log(6 == 6);                    // true
+console.log(!(6 == 6));                 // false
+console.log(6 == 7 && 6 > 5 && 6 >= 6); // false
+console.log(6 == 6 || 6 > 7 || 6 >= 5); // true
+=====
+
+=====
+Control Flow
+
+- if
+- else if
+- else
+
+syntax:-
+if (condition) {
+   // block of code
+}
+--
+if (condition) {
+   // block of code
+} else if (condition) {
+   // block of code
+} else {
+   // block of code
+}
+
+example:-
+let num = 1;
+
+if (num > 0) {
+    console.log(true);
+}
+// Return true
+--
+let light = false;
+
+if (light === true) {
+    console.log("Light ON");
+} else if (light === false) {
+    console.log("Light OFF");
+} else {
+    console.log("Error");
+}
+// Return Light OFF
+=====
+
+=====
+Nested if
+
+syntax:-
+if (condition) {
+   // block of code
+} else {
+   if (condition) {
+      // block of code
+   } else {
+      if (condition) {
+         //block of code
+      }
+   }
+}
+
+example:-
+let A = 5;
+
+if (A > 6) {
+    console.log("A is smaller than 6");
+} else {
+    if (A == 10) {
+        console.log("A is equal than 10");
+    } else {
+        if (A >= 5) {
+            console.log("A is greater than 5 or equal");
+        }
+    }
+}
+// Return A is greater than 5 or equal
+=====
+
+=====
+conditional operator
+
+conditional:-
+- ? if true
+- : if false
+
+syntax:-
+condition ? // block of code : // block of code
+--
+condition
+   ? // block of code
+   : condition
+   ? // block of code
+   : condition
+   ? // block of code
+   : // block of code
+
+example:-
+let A = 5;
+A > 6 ? console.log("A is greater than 6") : console.log("A is smaller than 6");
+// Return A is smaller than 6
+--
+let B = 5;
+B == 6
+    ? console.log("B is equal 6")
+    : B > 6
+    ? console.log("B is greater than 6")
+    : B < 4
+    ? console.log("B is smaller than 4")
+    : console.log("B is greater than 4");
+// Return B is greater than 4
+=====
+
+=====
+Switch statement
+
+- switch (expression)
+- case
+- default
+- break
+
+Syntax:-
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+Example:-
+let Day = 0;
+switch (Day) {
+  case 0:
+  case 1:
+    console.log("Sunday");
+    break;
+  case 2:
+    console.log("Monday");
+    break;
+  case 3:
+    console.log("Tuesday");
+    break;
+  default:
+    console.log("Unknown Day");
+}
+// Return Sunday
+=====
+
+=====
+Arrays
+
+syntax:-
+- create array
+let variableName = ["Element", "Element", "Element"];
+let variableName = new Array("Element", "Element");
+- create nested array
+let variableName = ["Element", "Element", ["Element", "Element"]];
+- access of array elements
+variableName[indexOfElement]
+- change array elements
+variableName[indexOfElement] = "newElement";
+- change nested array
+variableName[indexOfNestedArray] = ["newElement", "newElement"];
+
+example:-
+- create array
+let newArray = ["A", "B", "C"];
+let newArray = new Array("A", "B");
+- create nested array
+let newArray = ["A", "B", "C", ["D", "E"]];
+- access of array elements
+console.log(`${newArray[0]}`);  // A
+- change array elements
+let arrayOne = ["A", "B", "C"];
+arrayOne[0] = "D";
+- change nested array
+let arrayTwo = ["A", "B", "C", ["D", "E"]];
+arrayTwo[3] = ["X", "Y"];
+
+note:-
+you can see type of array just type
+let info = ["A", "B"];
+console.log(Array.isArray(info)); // Returns true
+=====
+
+=====
+Array methods search
+
+- indexOf(search element, from index [opt])
+- lastIndexOf(search element, from index [opt])
+- includes(value to find, from index [opt]) [ES7]
+
+let myFriends = ["Ahmed", "Mohamed", "Sayed", "Ali", "Ahmed"];
+
+console.log(myFriends); // ['Ahmed', 'Mohamed', 'Sayed', 'Ali', 'Ahmed']
+
+console.log(myFriends.indexOf("Ahmed"));     // 0
+console.log(myFriends.indexOf("Ahmed", 2));  // 4
+
+console.log(myFriends.includes("Ahmed"));     // true
+console.log(myFriends.includes("Ahmed", 2));  // true
+
+console.log(myFriends.indexOf("Gamal"));  // -1
+=====
+
+=====
+Arrays methods [Sort]
+
+Properties:-             Explain:-
+- sort(function [opt])   - sorting the array alphabetical
+- reverse()              - revers array
+
+Example:-
+let myFriends = [10, "Sayed", "Mohamed", "90", 9000, 100, 20, "10", -20, -10];
+console.log(myFriends.sort());      // [-10, -20, 10, '10', 100, 20, '90', 9000, 'Mohamed', 'Sayed']
+console.log(myFriends.reverse());   // ['Sayed', 'Mohamed', 9000, '90', 20, 100, '10', 10, -20, -10]
+=====
+
+=====
+Arrays methods [Slicing]
+
+Properties:-
+- slice(start [opt], end [opt] not including end)
+-- slice() => all array
+-- default start => 0
+-- negative count from end
+-- if end undefined => slice to the end array
+-- return new array
+- splice(start [mand], delete count [opt] [0 no remove], the item to add [opt])
+-- if negative => start from the end
+
+Example:-
+let myFriends = ["Ahmed", "Sayed", "Ali", "Osama", "Gamal", "Ameer"];
+console.log(myFriends);
+console.log(myFriends.slice());         // ['Ahmed', 'Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1));        // ['Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1, 3));     // ['Sayed', 'Ali']
+console.log(myFriends.slice(-3));       // ['Osama', 'Gamal', 'Ameer']
+console.log(myFriends.slice(1, -2));    // ['Sayed', 'Ali', 'Osama']
+console.log(myFriends.slice(-4, -2));   // ['Ali', 'Osama']
+console.log(myFriends);                 // ['Ahmed', 'Sayed', 'Ali', 'Osama', 'Gamal', 'Ameer']
+
+myFriends.splice(1, 2, "Sameer", "Omar");
+console.log(myFriends);  // ['Ahmed', 'Sameer', 'Omar', 'Osama', 'Gamal', 'Ameer']
+=====
+
+=====
+Array methods [joining]
+
+Properties:-
+- concat(array, array) => return a new array
+- join(separator)
+
+Example:-
+let myFriends = ["Ahmed", "Sayed", "Ali", "Gamal", "Ameer"];
+let myNewFriends = ["Omar", "Sameh"];
+let schoolFriends = ["Haytham", "Shady"];
+
+let allFriends = myFriends.concat(myNewFriends, schoolFriends, "Gameel", [1, 2]);
+console.log(allFriends);
+// ['Ahmed', 'Sayed', 'Ali', 'Gamal', 'Ameer', 'Omar', 'Sameh', 'Haytham', 'Shady', 'Gameel', 1, 2]
+
+console.log(allFriends.join());                  // Ahmed,Sayed,Ali,Gamal,Ameer,Omar,Sameh,Haytham,Shady,Gameel,1,2
+console.log(allFriends.join(""));                // AhmedSayedAliGamalAmeerOmarSamehHaythamShadyGameel12
+console.log(allFriends.join(" # "));
+// Ahmed # Sayed # Ali # Gamal # Ameer # Omar # Sameh # Haytham # Shady # Gameel # 1 # 2
+console.log(allFriends.join("|"));               // Ahmed|Sayed|Ali|Gamal|Ameer|Omar|Sameh|Haytham|Shady|Gameel|1|2
+console.log(allFriends.join("|").toUpperCase()); // AHMED|SAYED|ALI|GAMAL|AMEER|OMAR|SAMEH|HAYTHAM|SHADY|GAMEEL|1|2
+=====
+
+=====
+For Loop
+
+# propertie:-
+- For
+
+# syntax:-
+for ([initialExpression]; [conditionExpression]; [incrementExpression]) {
+  // Code Block
+}
+
+# Example:-
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+Returns:-
+0
+1
+2
+3
+4
+
+# Second Example:-
+let myFriends = ["Osama", "Ahmed", "Sayed", "Ali"];
+
+// console.log(myFriends[0]);
+// console.log(myFriends[1]);
+// console.log(myFriends[2]);
+// console.log(myFriends[3]);
+// console.log(myFriends[4]);
+
+for (i = 0; i < myFriends.length; i++) {
+  console.log(myFriends[i]);
+}
+
+Returns:-
+Osama
+Ahmed
+Sayed
+Ali
+
+# Advanced Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+for (;;) {
+  console.log(products[i]);
+  i++;
+  if (i === products.length) break;
+}
+
+Returns:-
+Keyboard
+Mouse
+Pen
+Pad
+Monitor
+iPhone
+
+# Second Advanced Example:-
+let myFriends = [1, 2, "Osama", "Ahmed", 3, 4, "Sayed", 6, "Ali"];
+let onlyNames = [];
+
+for (let i = 0; i < myFriends.length; i++) {
+  if (typeof myFriends[i] === "string") {
+    onlyNames.push(myFriends[i]);
+  }
+}
+console.log(onlyNames);
+Returns:-
+['Osama', 'Ahmed', 'Sayed', 'Ali']
+=====
+
+=====
+Nested Loop
+
+Syntax:-
+for () {
+  // main loop
+  for () {
+    // nested loop
+  }
+}
+
+# Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+let colors = ["Red", "Green", "Black"];
+let models = ["2014", "2015"];
+
+for (let i = 0; i < products.length; i++) {
+  console.log("#".repeat(15));
+  console.log(`# ${products[i]}`);
+  console.log("#".repeat(15));
+  console.log("Color: ");
+  for (let j = 0; j < colors.length; j++) {
+    console.log(`- ${colors[j]}`);
+  }
+  console.log("Models: ");
+  for (let k = 0; k < models.length; k++) {
+    console.log(`- ${models[k]}`);
+  }
+}
+// Try it yourself
+
+# Product practice example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let colors = ["Red", "Green", "Blue"];
+let showCount = 3;
+
+document.write(`<h1>Show ${showCount} Products</h1>`);
+
+for (let i = 0; i < showCount; i++) {
+  document.write(`<div>`);
+  document.write(`<h3>[${i + 1}] ${products[i]}</h3>`);
+  for (let j = 0; j < colors.length; j++) {
+    document.write(`<p>${colors[j]}</p>`);
+  }
+  document.write(`<p>${colors.join(' | ')}</p>`);
+  document.write(`</div>`)
+}
+// Try it yourself
+=====
+
+=====
+Loop Control
+
+# Properties:-
+- Break
+- Continue
+- Label
+
+# Syntax:-
+for () {
+  // Code Block
+  break;
+}
+
+for () {
+  // Code Block
+  continue;
+}
+
+mainLoop: for () {
+  // Code Block
+  nestedLoop: for () {
+    // Code Block
+  }
+}
+
+# Break Example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+
+for (let i = 0; i < products.length; i++) {
+  console.log(products[i]);
+  if (products[i] === "Pen") {
+    break;
+  }
+}
+// Try it yourself
+
+# Continue Example:-
+let products = ["Keyboard", 1, "Mouse", 2, "Pen", "Pad", 3, "Monitor"];
+
+for (let i = 0; i < products.length; i++) {
+  if (typeof products[i] === "number") {
+    continue;
+  }
+  console.log(products[i]);
+}
+// Try it yourself
+=====
+
+=====
+While
+
+Syntax:-
+while (condition) {
+  statement
+}
+
+Example:-
+let n = 0;
+
+while (n < 2) {
+  console.log(n);
+  n++;
+}
+// Returns 0 1
+
+Second example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+while (i < products.length) {
+  console.log(products[i]);
+  i++;
+}
+// Returns all products
+=====
+
+=====
+Do While
+
+Syntax:-
+do {
+  statement
+} while (condition);
+
+Example:-
+let i = 0;
+
+do {
+  console.log(i);
+  i++
+} while (false);
+// Returns 0
+
+Second example:-
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+do {
+  console.log(products[i]);
+  i++
+} while (i < products.length);
+// Returns all products
+=====
+
+=====
+Function
+
+Syntax:-
+function nameOfFunc(argument, argument) {
+  // Code Block
+}
+
+Simple Example:-
+function sayHello() {
+  console.log(`Hello Ahmed`);
+}
+sayHello()
+
+Simple Example:-
+function sayHello(userName) {
+  console.log(`Hi ${userName}`);
+}
+sayHello("Ahmed");
+
+Advanced Example:-
+function sayHello(userName, Age) {
+  if (Age < 20) {
+    console.log("App is Not Suitable For You");
+  } else {
+    console.log(`Hello ${userName} Your Age is ${Age}`);
+  }
+}
+sayHello('Sayed', 21);
+sayHello('Ali', 22)
+sayHello('Ahmed', 17);
+
+Advanced Example:-
+function generateYears(start, end, exclude) {
+  for (let i = start; i <= end; i++) {
+    if (i === exclude) {
+      continue;
+    } else {
+      console.log(i);
+    }
+  }
+}
+generateYears(2004, 2022, 2020);
+=====
+
+=====
+Function Return
+
+Properties:-
+- return
+
+Example:-
+function calc(num1, num2) {
+  return num1 + num2;
+}
+let result = calc(5, 5);
+console.log(result);
+
+Advanced Example:-
+function generate(start, end) {
+  for (let i = start; i <= end; i++) {
+    if (i === 15) {
+      return `Interruptting`;
+    }
+    console.log(i);
+  }
+}
+generate(10, 20);
+=====
+
+=====
+Default function parameters
+
+Example:-
+function sayHi(user, age = "Unknown") {
+  // if (age === undefined) {
+  //   age = "Unknown"
+  // }
+  // age = age || "Unknown"
+  return `Hi ${user} Your Age is ${age}`;
+}
+console.log(sayHi("Ahmed"));
+=====
+
+=====
+Function Rest
+
+Example:-
+function calc(...number) {
+  let result = 0;
+  for (let i = 0; i < number.length; i++) {
+    result += number[i];
+  }
+  return `Final result ${result}`;
+}
+console.log(calc(50, 40, 10));
+// Returns 100
+=====
+
+=====
+Advanced Example Function
+
+function showInfo(us = "Un", ag = "Un", rt = 0, show = "Yes", ...sk) {
+  document.write(`<div>`);
+  document.write(`<h2>Welcome, ${us}</h2>`);
+  document.write(`<p>Age: ${us}</p>`);
+  document.write(`<p>Hour Rate: $${rt}</p>`);
+  if (show === "Yes") {
+    if (sk.length > 0) {
+      document.write(`<p>Skills: ${sk.join(" | ")}</p>`);
+    } else {
+      document.write(`<p>Skills: No Skills</p>`);
+    }
+  } else {
+    document.write(`<p>Skills is hidden</p>`);
+  }
+  document.write(`</div>`);
+}
+showInfo("Ahmed", 17, 20, "Yes", "Html", "CSS", "JS");
+=====
+
+=====
+Nested Function
+
+Example:-
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+  // Nested Function
+  function concatMsg() {
+    message = `${message} ${fName} ${lName}`;
+  }
+  concatMsg();
+  return message;
+}
+console.log(sayMessage("Ahmed", "Nasser"));
+// Hello Ahmed Nasser
+
+Second Example:-
+function sayMessage(fName, lName) {
+  let message = `Hello`;
+
+  // Nested Function
+  function concatMsg() {
+    function getFullName() {
+      return `${fName} ${lName}`
+    }
+    return `${message} ${getFullName()}`;
+  }
+  return concatMsg();
+}
+console.log(sayMessage("Ahmed", "Nasser"));
+// same return
+=====
+
+=====
+Arrow Function
+
+Syntax 1:-
+(param) => expression
+
+Syntax 2:-
+(param1, param2) => expression
+
+Syntax 3:-
+(param) => {
+  // Code Block
+  // Code Block
+}
+
+Example 1:-
+// let print = function () {
+//   return 10;
+// }
+
+let print = () => 10;
+console.log(print());
+// 10
+Note: if you dont have param you can use _ seem ()
+
+Example 2:-
+// let print = function (num) {
+//   return num;
+// }
+
+let print = num => num;
+console.log(print(5));
+// 5
+
+Example 3:-
+// let print = function (num1, num2) {
+//   return num1 +num2;
+// }
+
+let print = (num1, num2) => num1 + num2;
+console.log(print(2, 2));
+// 4
+=====
+
+=====
+Function Self-invoking
+
+Syntax:-
+(function(){
+  // code block
+})();
+
+Example:-
+(function(num1, num2){
+  console.log(num1 + num2);
+})(2, 2);
+// 4
+=====
+
+=====
+Scope
+
+Note: var dont have any scope block and you can declared outside {}
+Note: if you don't use var,let,const before variable is auto create in global scope
+
+Block Scope:-
+{
+  let x = 2;
+}
+// x can NOT be used here
+
+{
+  var x = 2;
+}
+// x CAN be used here
+
+Local Scope:-
+// code here can NOT use carName
+
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+
+// code here can NOT use carName
+
+Global JavaScript Variables:-
+let carName = "Volvo";
+// code here can use carName
+
+function myFunction() {
+// code here can also use carName
+}
+
+Automatically Global:-
+function myFunction() {
+  carName = "Volvo";
+}
+myFunction();
+
+// code here can use carName
+=====
+
+=====
+Higher Order Functions
+
+Note:HOF mean Higher Order Function [this my cut].
+Note:HOF accepts function as parameters and/or returns function.
+
+.reduce() 
+.forEach() 
+.filter() 
+.map()
+=====
+
+=====
+HOF Map
+
+- methods creates a new array
+- populated with the results of calling a provided function on every element
+- in the calling array
+
+Syntax:-
+map(callBackFunc(Element, Index, Array) { }, thisArg)
+- Element => The current element being processed in the array
+- Index => The index of the current element being processed in the array
+- Array => The current array
+
+Example:-
+let myNums = [1, 2, 3, 4, 5, 6];
+let newArray = [];
+
+for (let i = 0; i< myNums.length; i++) {
+  newArray.push(myNums[i] + myNums[i]);
+}
+console.log(newArray);
+// [2, 4, 6, 8, 10, 12]
+
+// Same idea with map
+
+// Anonymous Func
+let addSelf = myNums.map(function(element, index, arr) {
+  return element + element;
+}, 10);
+console.log(addSelf);
+
+// Arrow Func
+let addSelfArrow = myNums.map((e) => e + e);
+console.log(addSelfArrow);
+
+// Func in Param
+function addition(e) {
+  return e + e;
+}
+let add = myNums.map(addition);
+console.log(add);
+=====
+
+=====
+HOF Map More Examples
+
+// Example 1
+let swappingCases = "aHMEd"
+
+let sw = swappingCases.split("").map(function(e) {
+  return e === e.toUpperCase() ? e.toLowerCase() : e.toUpperCase();
+}).join("");
+console.log(sw);
+// AhmeD
+
+// Example 2
+let invertedNumbers =[1, -10, -20, 15, 100, -30];
+
+inv = invertedNumbers.map(function(e) {
+  return -e;
+})
+console.log(inv);
+// [-1, 10, 20, -15, -100, 30]
+
+// Example 3
+let ignoreBooleans = "Ah12m5ed0"
+
+ign = ignoreBooleans.split("").map(function(e) {
+  return isNaN(parseInt(e)) ? e : "";
+}).join("");
+console.log(ign);
+// Ahmed
+=====
+
+=====
+HOF Filter
+
+- methods create a new array
+- with all element that pass the implemented by the provided function
+
+Syntax:-
+- Same syntax HOF Map
+
+Example 1:-
+// Get friends with name starts with A
+let friends = ["Ahmed", "Sameh", "Sayed", "Asmaa", "Amgad", "Israa"];
+
+let filterFriends = friends.filter(function(e) {
+  return e.startsWith("A")// ? true : false;
+});
+console.log(filterFriends);
+// ['Ahmed', 'Asmaa', 'Amgad']
+
+Example 2:-
+// Get even number only
+let number = [11, 20, 2, 5, 17, 10];
+
+let evenNumber = number.filter(function(e) {
+  return e % 2 === 0;
+});
+
+console.log(evenNumber);
+// [20, 2, 10]
+
+Example 3:-
+// Filter words more then 4 characters
+let sentence = "I Love Foods Code Too Playing Much";
+
+let smallWords = sentence.split(" ").filter(function(e) {
+  return e.length <= 4;
+}).join(" ");
+console.log(smallWords);
+// I Love Code Too Much
+
+Example 4:-
+// Filter string + multiply
+let mix = "A13BS2ZX";
+
+let mixedContent = mix
+  .split("")
+  .filter(function(e) {
+    return  parseInt(e);
+  }).map(function(e) {
+    return e*e;
+  }).join("");
+console.log(mixedContent);
+// 194
+=====
+
+=====
+HOF Reduce
+
+- Method executes a reducer function on each element of the array
+- resulting in a single output value
+
+Syntax:-
+.reduce(callBackFunc(Accumulator, Current Val, Current Index, Source Array) { }, initialValue)
+- Accumulator => The accumulated value previously returned in the last invocation
+- current val => The current element being processed in the array
+- index => The index of the current element being processed in the array
+--- starts from index 0 if an initialVal is provided
+--- otherwise, it starts from index 1
+- Array => The current array
+
+Example:-
+let nums = [10, 20, 30, 40];
+
+let add = nums.reduce(function(Accumulator, currentVal, currentIndex, sourceArray) {
+  console.log(`Accumulator => ${Accumulator}`);
+  console.log(`Current Element => ${currentVal}`);
+  console.log(`Current Element Index => ${currentIndex}`);
+  console.log(`Source Array => ${sourceArray}`);
+  console.log(Accumulator + currentVal);
+  return Accumulator + currentVal
+});
+console.log(add);
+Returns
+  Accumulator => 10
+  Current Element => 20
+  Current Element Index => 1
+  Source Array => 10,20,30,40
+  30
+  Accumulator => 30
+  Current Element => 30
+  Current Element Index => 2
+  Source Array => 10,20,30,40
+  60
+  Accumulator => 60
+  Current Element => 40
+  Current Element Index => 3
+  Source Array => 10,20,30,40
+  100
+  100
+=====
+
+=====
+HOF Reduce Example
+
+Example 1:-
+let nums = [10, 20, 15, 40];
+
+let add = nums.reduce(function(acc, current) {
+  return acc + current
+}, 5);
+console.log(add);
+// 90
+
+Example 2:-
+let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test", "Propaganda_Two"];
+
+let check = theBiggest.reduce(function (acc, current) {
+  return acc.length > current.length ? acc : current;
+});
+console.log(check);
+// Propaganda_Two
+
+Example 3:-
+let removeChars = ["A", "@", "H", "@", "M", "@", "E", "D", "@"];
+
+let finalString = removeChars.filter(function (e) {
+  return !e.startsWith("@");
+}).reduce(function (acc, current) {
+  return `${acc}${current}`;
+});
+console.log(finalString);
+// AHMED
+=====
+
+=====
+HOF forEach
+
+- method executes a provided function once for each array element
+
+Syntax:-
+.forEach(callBackFunc(Element, Index, Array) { }, thisArg)
+
+Note:-
+- Doesn't return anything [undefined]
+- break will not break the loop
+
+Example:-
+HTML:
+<ul>
+  <li class="active">One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+<div class="content">
+  <div>Div One</div>
+  <div>Div Two</div>
+  <div>Div three</div>
+</div>
+JS:
+let allLis = document.querySelectorAll("ul li");
+let allDivs = document.querySelectorAll(".content div");
+
+allLis.forEach(function (e) {
+  e.onclick = function () {
+    // Remove active class from all elements
+    allLis.forEach(function (e) {
+      e.classList.remove("active");
+    });
+    // Add active class to this element
+    this.classList.add("active");
+    // Hide all divs
+    allDivs.forEach(function (e) {
+      e.style.display = "none";
+    });
+  };
+});
+// Try it yourself
+=====
+
+=====
+Array Flat
+
+Syntax:-
+nameOfArray.flat([Depth]);
+
+Example 1:-
+let arr1 = [1, 2, [3, 4]];
+arr1.flat(); 
+// [1, 2, 3, 4]
+
+Example 2:-
+let arr2 = [1, 2, [3, 4, [5, 6]]];
+arr2.flat();
+// [1, 2, 3, 4, [5, 6]]
+
+Example 3:-
+let arr3 = [1, 2, [3, 4, [5, 6]]];
+arr3.flat(2);
+// [1, 2, 3, 4, 5, 6]
+
+Example 4:-
+const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+arr4.flat(Infinity);
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Same idea without flat():-
+function flatten(arr) {
+  let result = [];
+
+  arr.forEach((i) => {
+    if (Array.isArray(i)) {
+      result.push(...flatten(i));
+    } else {
+      result.push(i);
+    }
+  })
+
+  return result;
+}
+
+// Usage
+let nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
+
+flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+=====
+
+=====
+Object
+
+Syntax:-
+let myVar = "country";
+
+let user = {name: "Ahmed", country: "Egypt"};
+
+Returns:-
+console.log(user.name); // Ahmed
+console.log(user.country); // Egypt
+console.log(user.myVar); // undefined
+console.log(user[myVar]); // Egypt
+=====
+
+=====
+Nested Object
+
+Syntax:-
+let user = {
+  name: "Ahmed",
+  age: 17,
+  skills: ["HTML", "CSS", "JS"],
+  available: false,
+  addresses: {
+    ksa: "Riyadh",
+    egypt: {
+      one: "Cairo",
+      two: "Giza",
+    },
+  },
+  checkAv: function () {
+    if (user.available === true) {
+      return `Available For Work`;
+    } else {
+      return `Not Available`;
+    }
+  },
+};
+
+Returns:-
+console.log(user.name); // Ahmed
+console.log(user.skills[0]); // HTML
+console.log(user.addresses.ksa); // Riyadh
+console.log(user.addresses.egypt.two); // Giza
+console.log(user.checkAv()); // Not Available
+=====
+
+=====
+Other Way To Type Object
+
+let user = new Object({
+  age: 17,
+});
+
+console.log(user); // {age: 17}
+
+user.age = 18;
+user["country"] = "Egypt";
+
+user.sayHi = function () {
+  return `Hi`;
+};
+
+console.log(user); // {age: 18, country: 'Egypt', sayHi: ƒ}
+console.log(user.age); // 18
+console.log(user.country); // Egypt
+console.log(user.sayHi()); // Hi
+=====
+
+=====
+Object Keyword This
+
+Examples:-
+console.log(this); // Window
+console.log(this === window); // true
+
+myVAr = 100;
+
+console.log(window.myVAr); // 100
+console.log(this.myVAr); // 100
+
+function sayHello() {
+  console.log(this);
+  return this;
+}
+sayHello(); // window
+
+console.log(sayHello() === window); // true
+
+document.getElementById("cl").onclick = function () {
+  console.log(this); // <button id="cl">Button</button>
+};
+
+let user = {
+  age: 17,
+  ageInDay: function () {
+    console.log(this);
+    return this.age * 365;
+  },
+};
+
+console.log(user.age); // 17
+console.log(user.ageInDay()); // 6205
+=====
+
+=====
+Create Object With Create Methods
+
+Examples:-
+let user = {
+  age: 17,
+  doubleAge: function () {
+    return this.age * 2;
+  },
+};
+
+console.log(user); // {age: 17, doubleAge: ƒ}
+console.log(user.age); // 17
+console.log(user.doubleAge()); // 34
+
+let obj = Object.create({});
+
+obj.a = 100;
+
+console.log(obj); // {a: 100}
+
+let copyObj = Object.create(user);
+
+copyObj.age = 50;
+
+console.log(copyObj); // {age: 50}
+console.log(copyObj.age); // 50
+console.log(copyObj.doubleAge()); // 100
+=====
+
+=====
+Create Object With Assign Methods
+
+Examples:-
+let obj1 = {
+  prop1: 1,
+  meth1: function () {
+    return this.prop1;
+  },
+};
+
+let obj2 = {
+  prop2: 2,
+  meth2: function () {
+    return this.prop2;
+  },
+};
+
+let targetObject = {
+  prop1: 100,
+  prop3: 3,
+};
+
+let finalObject = Object.assign(targetObject, obj1, obj2);
+
+finalObject.prop1 = 200;
+finalObject.prop4 = 4;
+
+console.log(finalObject);
+// {prop1: 200, prop3: 3, prop2: 2, meth1: ƒ, meth2: ƒ, …}
+
+let newObject = Object.assign({}, obj1, {prop5: 5, prop6: 6});
+console.log(newObject);
+// {prop1: 1, prop5: 5, prop6: 6, meth1: ƒ}
+=====
+
+=====
+Object More Info
+
+Object hasOwnProperty():-
+
+let object1 = {};
+object1.property1 = 42;
+
+console.log(object1.hasOwnProperty('property1'));
+// output: true
+
+console.log(object1.hasOwnProperty('toString'));
+// output: false
+
+console.log(object1.hasOwnProperty('hasOwnProperty'));
+// output: false
+
+Object Key:-
+const object1 = {
+  a: 'someString',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+
+Object Values:-
+const object1 = {
+  a: 'someString',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+// expected output: Array ["someString", 42, false]
+
+Object Length:-
+let object = {
+  user:"hello",
+  password:"123"
+}
+
+console.log(Object.keys(object).length)
+// 2
+=====
+
+=====
+/*
+  HTML:-
+  <span class="my-span">My Span</span>
+  <p>Hello Paragraph 1</p>
+  <p>Hello Paragraph 2</p>
+  <div id="my-div">Hello Div</div>
+  <form action="">
+    <input type="text" name="one" value="Hello">
+  </form>
+  <form action="">
+    <input type="text" name="two" value="Hello">
+  </form>
+  <a href="https://google.com">Google</a>
+  <a href="https://facebook.com">Facebook</a>
+
+*/
+
+Document Object Model Selectors
+
+let myIdElement = document.getElementById("my-div");
+let myTagElement = document.getElementsByTagName("p");
+let myClassElement = document.getElementsByClassName("my-span");
+let myQueryElement = document.querySelector(".my-span");
+let myQueryElementAll = document.querySelectorAll(".my-span");
+
+console.log(myIdElement); // <div id="my-div">Hello Div</div>
+console.log(myTagElement[0]); // <p>Hello Paragraph 1</p>
+console.log(myClassElement[0]); // <span class="my-span">My Span</span>
+console.log(myQueryElement); // <span class="my-span">My Span</span>
+console.log(myQueryElementAll); // NodeList [span.my-span]
+
+console.log(document.title); // test
+console.log(document.body); // <body>...</body>
+console.log(document.forms[0].one.value); // Hello
+console.log(document.links[1].href); // https://facebook.com/
+=====
+
+=====
+/*
+  HTML:-
+  <div class="js">javascript <span>Div</span> &lt;span&gt;</div>
+  <img src="" alt="">
+  <a href="#" class="link">Google</a>
+*/
+
+DOM Get / Set Element Content And Attributes
+
+- innerHTML
+- textContent
+- getAttribute
+- setAttribute
+
+let myElement = document.querySelector('.js');
+
+console.log(myElement.innerHTML); // Javascript <span>Div</span> &lt;span&gt;
+console.log(myElement.textContent); // Javascript Div <span>
+
+myElement.innerHTML = "Text From <span>Script.js</span> File";
+myElement.textContent = "Text From <span>Script.js</span> File";
+
+document.images[0].src = "https://google.com";
+document.images[0].alt = "Alternate";
+document.images[0].title = "picture";
+document.images[0].id = "pic";
+document.images[0].className = "img";
+
+let myLink = document.querySelector(".link");
+
+console.log(myLink.getAttribute("class")); // link
+console.log(myLink.getAttribute("href")); // #
+
+myLink.setAttribute("href", "https://twitter.com");
+myLink.setAttribute("title", "Twitter");
+=====
+
+=====
+/*
+  HTML:-
+  <div>Div</div>
+  <p class="para" title="Paragraph" data-src="Testing"></p>
+*/
+
+DOM Check Attr
+
+- .attributes
+- .hasAttribute
+- .hasAttributes
+- .removeAttribute
+
+console.log(document.getElementsByTagName("p")[0].attributes);
+// NamedNodeMap {0: class, 1: title, 2: data-src, class: class, title: title, data-src: data-src, length: 3}
+
+let myP = document.getElementsByTagName("p")[0];
+
+if (myP.hasAttribute("data-src")) {
+  if (myP.getAttribute("data-src") === "") {
+    myP.removeAttribute("data-src");
+  } else {
+    myP.setAttribute("data-src", "New Value");
+  }
+} else {
+  console.log(`Not Found`);
+}
+
+if (myP.hasAttributes()) {
+  console.log(`Has Attributes`);
+}
+// Has Attributes
+
+if (document.getElementsByTagName("div")[0].hasAttributes()) {
+  console.log(`Has Attributes`);
+} else {
+  console.log(`Not Found Attribute`);
+}
+// Not Found Attribute
+=====
+
+=====
+DOM Create Elements
+
+- .createElement
+- .createComment
+- .createTextNode
+- .createAttribute
+- .appendChild
+
+let myElement = document.createElement("div");
+let myAttr = document.createAttribute("data-custom");
+let myText = document.createTextNode("Product One");
+let myComment = document.createComment("This Is Div");
+
+myElement.className = "product";
+myElement.setAttributeNode(myAttr);
+myElement.setAttribute("data-test", "Testing");
+
+// Append Comment To Element
+myElement.appendChild(myComment);
+
+// Append Text To Element
+myElement.appendChild(myText);
+
+// Append Element To Body
+document.body.appendChild(myElement);
+
+/*
+  HTML Result:-
+  <div class="product" data-custom data-test="Testing">
+  <!-- This Is Div -->
+  "Product One"
+  </div>
+*/
+=====
+
+=====
+DOM Deal With Children
+
+- children
+- childNode
+- firstChild
+- lastChild
+- firstElementChild
+- lastElementChild
+
+Usage:-
+/*
+  HTML:-
+  <div><!--- Ahmed -->Hello Div<p>Hello P</p><span>Hello Span</span><!-- Comment --></div>
+*/
+
+let myElement = document.querySelector("div");
+
+console.log(myElement); // <div>...</div>
+console.log(myElement.children); // HTMLCollection(2) [p, span]
+console.log(myElement.children[0]); // <p>Hello P</p>
+console.log(myElement.childNodes); // NodeList(5) [comment, text, p, span, comment]
+console.log(myElement.childNodes[0]); // <!--- Ahmed -->
+
+console.log(myElement.firstChild); // <!--- Ahmed -->
+console.log(myElement.lastChild); // <!-- Comment -->
+
+console.log(myElement.firstElementChild); // <p>Hello P</p>
+console.log(myElement.lastElementChild); // <span>Hello Span</span>
+=====
+
+=====
+DOM Events
+
+- onclick       => do something after click on element
+- oncontextmenu =>  when the user right-clicks on an element to open the context menu
+- onmuseseenter => when mouse move into element do something
+- onmuseleave   => when mouse move into element do something
+
+- onload        => when object on load do something
+- onscroll      => when scroll page do something
+- onresize      => when resize page do something
+
+- onfocus       => when focus the input field do something
+- onblur        => when you leave the input field do something
+- onsubmit      => when do submit form do something 
+=====
+
+=====
+DOM Event Prevent Default
+
+Usage:-
+/*
+  HTML:-
+  <form action="">
+    <input type="text" name="username" placeholder="Max 10 Chars Only">
+    <input type="text" name="age" placeholder="Cant Be Empty">
+    <input type="submit" name="submit" value="Submit Data">
+  </form>
+  <a href="https://google.com">Google</a>
+*/
+
+let userInput = document.querySelector("[name='username']");
+let ageInput = document.querySelector("[name='age']");
+
+document.forms[0].onsubmit = function (e) {
+  let userValid = false;
+  let ageValid = false;
+
+  if (userInput.value !== "" && userInput.value.length <= 10) {
+    userValid = true;
+  }
+
+  if (ageInput.value !== "" && ageInput.value <= 99 && ageInput.value >= 16) {
+    ageValid = true;
+  }
+
+  if (userValid === false || ageValid === false) {
+    e.preventDefault();
+  }
+};
+
+document.links[0].onclick = function (event) {
+  console.log(event);
+  event.preventDefault();
+};
+=====
+
+=====
+/*
+  HTML:-
+  <form action="">
+  <input type="text" class="one">
+  <input type="text" class="two">
+  </form>
+  <a href="https://google.com" target="_blank">Google</a>
+*/
+
+DOM Events Simulation
+
+- click => on click do something
+- focus => focus
+- blur => on unfocused do something
+
+let one = document.querySelector(".one");
+let two = document.querySelector(".two");
+
+window.onload = function () {
+  two.focus();
+}
+
+one.onblur = function () {
+  document.links[0].click();
+}
+=====
+
+=====
+/*
+  HTML:-
+  <div id="my-div" class="div ahmed">Div</div>
+*/
+
+DOM Class List
+
+- classList
+-- length
+-- contains
+-- item(index)
+-- add
+-- remove
+-- toggle
+
+let element = document.getElementById("my-div");
+
+console.log(element.classList); // DOMTokenList ['div', value: 'div']
+console.log(typeof element.classList); // object
+console.log(element.classList.contains("ahmed"));// true
+console.log(element.classList.contains("show")); // false
+console.log(element.classList.item("1")); // ahmed
+
+element.onclick = function () {
+  element.classList.toggle("show");
+};
+=====
+
+=====
+/*
+  HTML:-
+  <div id="mt-div">Div With Many Classes</div>
+*/
+/*
+  CSS:-
+  div {
+    font-size: 30px;
+    line-height: 2;
+  }
+*/
+
+DOM CSS
+
+- style
+- cssText
+- removeProperty(propertyName) [Inline, Stylesheet]
+- setProperty(propertyName, value, priority)
+
+let element = document.getElementById("my-div");
+
+element.style.color = "red";
+element.style.fontWeight = "bold";
+
+element.style.cssText = "font-weight: bold; color: green; opacity: 0.9;";
+
+element.style.removeProperty("color");
+element.style.setProperty("font-size", "40px", "important");
+
+document.styleSheets[0].rules[0].style.removeProperty("line-height");
+document.styleSheets[0].rules[0].style.setProperty("background-color", "red", "important");
+=====
+
+=====
+/*
+  HTML:-
+  <div id="my-div">Div Has <span>Span</span></div>
+*/
+
+DOM Deal With Element
+
+- before [Element || String]
+- after [Element || String]
+- append [Element || String]
+- prepend [Element || String]
+- remove
+
+let element = document.getElementById("my-div");
+let createdP = document.createElement("p");
+
+element.before("Created Before"); // element will be created before parent
+element.after("Created After"); // element will be created after parent
+
+element.append(createdP); // element will be created inside parent at start
+element.prepend(createdP); // element will be created inside parent at end
+
+element.remove(); // element will be remove at document
+=====
+
+=====
+/*
+  HTML:-
+  <div class="parent">
+    <span class="One">One</span>
+    <!-- Comment -->
+    <span class="Two">Two</span>
+    <!-- Comment -->
+    <span class="Three">Three</span>
+  </div>
+*/
+
+DOM Traversing
+
+- nextSibling
+- previousSibling
+- nextElementSibling
+- previousElementSibling
+- parentElement
+
+let span = document.querySelector(".two");
+
+console.log(span.parentElement);
+// <div class="parent">...</div>
+
+console.log(span.nextSibling); // <!-- Comment -->
+console.log(span.nextElementSibling); // <span class="three">Three</span>
+
+console.log(span.previousSibling); // <!-- Comment -->
+console.log(span.previousElementSibling); // <span class="one">One</span>
+
+// span.onclick = function () {
+//   span.parentElement.remove();
+// } [parent will be deleted after click on element]
+=====
+
+=====
+/*
+  HTML:-
+  <p id="my-p" class="my-p">This IS <span>P</span></p>
+  <div>Div</div>
+*/
+
+DOM Cloning
+
+- cloneNode(Deep) => copy element
+
+let myP = document.querySelector("p").cloneNode(true);
+let myDiv = document.querySelector("div");
+
+myP.id = `${myP.id}-clone`;
+
+myDiv.appendChild(myP);
+=====
+
+=====
+DOM Add Event Listener
+
+- addEventListener
+
+let myP = document.querySelector("p");
+
+// myP.onclick = one;
+// myP.onclick = two;
+
+// function one() {
+//   console.log("Message From OnClick 1");
+// }
+// function two() {
+//   console.log("Message From OnClick 2");
+// } // Just last event run
+
+// window.onload = "Ahmed"; // do nothing
+
+// myP.addEventListener("click", function () {
+//   console.log("Message OnClick 1 Event");
+// });
+
+// myP.addEventListener("click", one);
+// myP.addEventListener("click", two);
+
+// myP.addEventListener("click", "String"); // Error
+
+myP.onclick = function () {
+  let newP = myP.cloneNode(true);
+  newP.className = "clone";
+  document.body.appendChild(newP);
+};
+
+// let cloned = document.querySelector(".clone"); // Error
+
+// cloned.onclick = function () {
+//   console.log("iam cloned");
+// };
+
+document.addEventListener("click", function (e) {
+  if (e.target.className === "clone") {
+    console.log("iam cloned");
+  }
+});
+=====
+
+=====
+BOM [Browser Object Model]
+
+- alert(Message) => just you can click button [Ok]
+- confirm(Message) => need response and return a boolean value
+- prompt(Message, Default Message) => collect data
+
+alert("Test");
+console.log("Test");
+
+let confirmMsg = confirm("Are You Sure?");
+
+console.log(confirmMsg);
+
+if (confirmMsg === true) {
+  console.log("Item Deleted");
+} else {
+  console.log("Item not deleted");
+}
+
+let promptMsg = prompt("Good Day To You", "Write Day With 3 Characters");
+
+console.log(promptMsg);
+=====
+
+=====
+BOM setTimeout
+
+- setTimeout(Function, Milliseconds, Additional Params)
+- clearTimeout(Identifier)
+
+setTimeout(function (){
+  console.log("Msg");
+}, 3000); // Log Msg after 3s
+
+setTimeout(sayMsg, 3000); // same idea
+
+function sayMsg() {
+  console.log("I'am Msg");
+};
+
+setTimeout(sayMsg, 3000, "Ahmed", 17); // same idea but with argument
+
+function sayMsg(user, age) {
+  console.log(`I'am Msg For ${user} Your Age Is ${age}`);
+};
+
+let counter = setTimeout(_ => console.log("Msg"), 2000);
+let btn = document.querySelector("button");
+btn.onclick = function() {
+  clearTimeout(counter)
+}; // break setTimeout() return nothing
+=====
+
+=====
+BOM setInterval
+
+- setInterval(Function, Milliseconds, Additional Params)
+- clearInterval(Identifier)
+
+setInterval(function() {
+  console.log("Msg");
+}, 1000); // Auto log Msg after 1s loop
+
+setInterval(sayMsg, 1000);
+
+function sayMsg() {
+  console.log("I'am Msg");
+}; // Same idea
+
+setInterval(sayMsg, 1000, "Ahmed", 17);
+
+function sayMsg(user, age) {
+  console.log(`I'am Msg for ${user} your age is ${age}`);
+}; // Same idea but with argument
+
+let div = document.querySelector("div");
+function countDown() {
+  div.innerHTML -= 1;
+  if (div.innerHTML === "0") {
+    clearInterval(counter);
+  }
+}
+let counter = setInterval(countDown, 1000);
+// count down if div equal 0 break function
+=====
+
+=====
+BOM Location Object
+
+- href get/set [url, hash, file, mail]
+- host
+- hash
+- protocol
+- reload()
+- replace()
+- assign()
+
+console.log(location); // [Object]
+console.log(location.href); // Page Link
+
+// location.href = "https://google.com"; // go to google
+// location.href = "/#sec02"; // go to section in same page
+// location.href = 
+"https://developer.mozilla.org/en-US/docs/web/JavaScript#reference";
+// go to section in mdn
+
+console.log(location.host); // 127.0.0.1:5500
+console.log(location.hostname); // 127.0.0.1
+
+console.log(location.protocol); // http:
+
+console.log(location.hash);
+=====
+
+=====
+BOM open / close
+
+- open(URL [opt], Window name or target attr [opt], Win features [opt], History Replace [opt])
+- close()
+- Window Features
+-- left [Num]
+-- top [Num]
+-- width [Num]
+-- height [Num]
+-- menubar [Y/N]
+
+setTimeout(function() {
+  window.open("", "_self", "", false);
+}, 2000);
+
+setTimeout(function() {
+  window.open("https://google.com","_blank", "width=400, height=400, left=200, top=10");
+}, 2000);
+=====
+
+=====
+BOM History API
+
+- Property
+-- length
+- Methods
+-- back()
+-- forward()
+-- go(Delta) => position in history
+-- pushState(state, unused, url)
+-- replaceState(stateObj, unused, url)
+
+console.log(history);
+// History {length: 1, scrollRestoration: 'auto', state: null}
+=====
+
+=====
+BOM More Methods
+
+- stop()
+- print()
+- focus()
+- scrollTo(x, y || Options)
+- scroll(x, y || Options)
+- scrollBy(x, y || Options)
+
+let myNewWindow = window.open("https://google.com", "", "width=500, height=500");
+
+window.scrollTo({
+  left: 500,
+  top: 200,
+  behavior: "smooth"
+});
+=====
+
+=====
+BOM Local Storage
+
+- setItem
+- getItem
+- removeItem
+- clear
+- key
+
+Note:
+- no expiration time
+- HTTP and HTTPS
+- private tab
+
+// Set
+window.localStorage.setItem("color", "#F00");
+window.localStorage.fontWeight = "bold";
+window.localStorage["fontSize"] = "20px";
+
+// Get
+console.log(window.localStorage.getItem("color")); // #F00
+console.log(window.localStorage.color); // #F00
+console.log(window.localStorage["color"]); // #F00
+
+// Remove One
+// window.localStorage.removeItem("color");
+
+// Remove All
+// window.localStorage.clear();
+
+// Get Key
+console.log(window.localStorage.key(0)); // fontSize
+
+// Set Color In Page
+document.body.style.backgroundColor = window.localStorage.getItem("color");
+
+console.log(window.localStorage); // Storage {fontSize: '20px', color: '#F00', fontWeight: 'bold', length: 3}
+console.log(typeof window.localStorage); // object
+=====
+
+=====
+BOM Local Storage Practice
+
+/*
+  HTML:-
+  <ul>
+    <li class="active" data-color="red"></li>
+    <li data-color="green"></li>
+    <li data-color="blue"></li>
+    <li data-color="black"></li>
+  </ul>
+  <div class="experiment"></div>
+*/
+/*
+  CSS:-
+    body {
+      background-color: #eee;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      background-color: #ddd;
+      margin: 20px auto;
+      padding: 20px;
+      width: 400px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+    ul li {
+      width: 60px;
+      height: 60px;
+      border: 2px solid transparent;
+      opacity: 0.4;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    ul li.active,
+    ul li:hover {
+      opacity: 1;
+    }
+    ul li:first-child {
+      background-color: red;
+    }
+    ul li:nth-child(2) {
+      background-color: green;
+    }
+    ul li:nth-child(3) {
+      background-color: blue;
+    }
+    ul li:nth-child(4) {
+      background-color: black;
+    }
+    .experiment {
+      background-color: red;
+      width: 600px;
+      height: 300px;
+      margin: 20px auto;
+    }
+*/
+
+let lis = document.querySelectorAll("ul li");
+let exp = document.querySelector(".experiment");
+
+if (localStorage.getItem("color")) {
+  exp.style.backgroundColor = localStorage.color;
+  lis.forEach((li) => {
+    li.classList.remove("active");
+  });
+  document.querySelector(`[data-color="${localStorage.color}"]`).classList.add("active");
+}
+
+lis.forEach((li) => {
+  li.addEventListener("click", _ => {
+    lis.forEach((li) => {
+      li.classList.remove("active");
+    });
+    li.classList.add("active");
+    localStorage.setItem("color", li.dataset.color);
+    exp.style.backgroundColor = li.dataset.color;
+  });
+});
+=====
+
+=====
+BOM Session Storage
+
+Note: Same idea in local storage but after close page all value clear
+=====
+
+=====
+Destructuring Array Part 1
+
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+
+let myFriends = ["Ahmed", "Sayed", "Ali", "Mohamed"];
+
+[a = "A", b, c, d, e = "Osama"] = myFriends;
+
+console.log(a); // Ahmed
+console.log(b); // Sayed
+console.log(c); // Ali
+console.log(d); // Mohamed
+console.log(e); // Osama
+
+// console.log(myFriends[4]); // undefined
+
+let [, y, , z] = myFriends
+
+console.log(y); // Sayed
+console.log(z); // Mohamed
+=====
+
+=====
+Destructuring Array Part 2
+
+let myFriends = ["Ahmed", "Sayed", "Ali", ["Shady", "Amr", ["Mohamed", "Gamal"]]];
+
+// console.log(myFriends[3][2][1]); // Gamal
+
+let [, , , [a, , [, b]]] = myFriends
+
+console.log(a); // Shady
+console.log(b); // Gamal
+=====
+
+=====
+Destructuring Array Part 3 Swapping Var
+
+let book = "Video";
+let video = "Book";
+
+// // First Way With Stash
+// let stash = book; // Video
+
+// // Change book value
+// book = video; // Book
+
+// // Change video value
+// video = stash; // Video
+
+// Destructuring Way
+[book, video] = [video, book]
+
+console.log(book); // Book
+console.log(video); // Video
+=====
+
+=====
+Destructuring Object Part 1
+
+let user = {
+  theName: "Ahmed",
+  theAge: 18,
+  theTitle: "Front-End",
+  theCountry: "Egypt",
+};
+
+// console.log(user.theName); // Ahmed
+// console.log(user.theAge); // 18
+// console.log(user.theTitle); // Front-End
+// console.log(user.theCountry); // Egypt
+
+// let theName = user.theName;
+// let theAge = user.theAge;
+// let theTitle = user.theTitle;
+// let theCountry = user.theCountry;
+
+// console.log(theName); // Ahmed
+// console.log(theAge); // 18
+// console.log(theTitle); // Front-End
+// console.log(theCountry); // Egypt
+
+// ({ theName, theAge, theTitle, theCountry } = user);
+const { theName, theAge, theCountry } = user;
+
+console.log(theName); // Ahmed
+console.log(theAge); // 18
+console.log(theCountry); // Egypt
+=====
+
+=====
+Destructuring Object Part 2
+
+const user = {
+  theName: "Ahmed",
+  theAge: 18,
+  theTitle: "Developer",
+  theCountry: "Egypt",
+  theColor: "White",
+  skills: {
+    html: 99,
+    css: 99,
+  },
+};
+
+const {
+  theName: n,
+  theAge: a,
+  theCountry,
+  theColor: co = "Red",
+  skills: { html: h, css },
+} = user;
+
+console.log(n); // Ahmed
+console.log(a); // 18
+console.log(theCountry); // Egypt
+console.log(co); // White
+console.log(`My html skill progress is ${h}`); // ~~~ 99
+console.log(`My css skill progress is ${css}`); // ~~~ 99
+
+const { html: skillOne, css: skillTwo } = user.skills;
+
+console.log(`${skillOne}`); // 99
+console.log(`${skillTwo}`); // 99
+=====
+
+=====
+Destructuring Function Parameters
+
+const user = {
+  theName: "Ahmed",
+  theAge: 18,
+  skills: {
+    html: 99,
+    css: 99,
+  },
+};
+
+showDetails(user);
+
+// function showDetails(obj) {
+//   console.log(obj.theName); // Ahmed
+//   console.log(obj.theAge); // 18
+//   console.log(obj.skills.css); // 99
+// }
+
+function showDetails({ theName: n, theAge: a, skills: { css: c } } = user) {
+  console.log(n); // Ahmed
+  console.log(a); // 18
+  console.log(c); // 99
+}
+=====
+
+=====
+Destructuring Array And Object Example
+
+const user = {
+  theName: "Ahmed",
+  theAge: 18,
+  skills: ["HTML", "CSS", "JS"],
+  addresses: {
+    egypt: "Cairo",
+    ksa: "Riyadh",
+  },
+};
+
+const {
+  theName: n,
+  theAge: a,
+  skills: [, , three],
+  addresses: { egypt: e },
+} = user;
+
+console.log(n); // Ahmed
+console.log(a); // 18
+console.log(three); // JS
+console.log(e); // Cairo
+=====
+
+=====
+Set Data Type
+
+Note: Object to store unique values
+Note: Cannot access element by index
+
+Properties:-
+- size
+
+Methods:-
+- add
+- delete
+- clear
+- has
+
+Syntax:-
+let mySet = new Set(Iterable);
+
+Example:-
+let myData = [1, 1, 1, 2, 3, "A"];
+// let myUniqueData = new Set([1, 1, 1, 2, 3, "A"]);
+// let myUniqueData = new Set(myData);
+// let myUniqueData = new Set().add(1).add(1).add(1).add(2).add(3);
+let myUniqueData = new Set();
+
+myUniqueData.add(1).add(1).add(1);
+myUniqueData.add(2).add(3).add("A");
+
+console.log(`is set has => A ${myUniqueData.has("a".toUpperCase())}`);
+// ~~~ true
+
+console.log(myData); // (6) [1, 1, 1, 2, 3, 'A']
+console.log(myUniqueData); // Set(4){1, 2, 3, 'A'}
+
+console.log(myUniqueData.size); // 4
+
+console.log(myData[0]); // 1
+console.log(myUniqueData[0]); // undefined <!> you cant access element by index
+
+// myUniqueData.delete(2); // item has ben deleted
+console.log(myUniqueData.delete(2));
+// item has ben deleted and return true if item found
+
+console.log(myUniqueData); // Set(3){1, 3, 'A'}
+console.log(myUniqueData.size); // 3
+
+myUniqueData.clear();
+
+console.log(myUniqueData); // Set(0){size: 0}
+console.log(myUniqueData.size); // 0
+=====
+
+=====
+Set vs WeakSet
+
+The WeakSet is weak,
+meaning references to objects in a WeakSet are held weakly.
+If no other references to an object stored in the WeakSet exist,
+those objects can be garbage collected.
+
+--
+Set     => Can Store Any Data Values
+WeakSet => Collection Of Objects Only
+--
+Set     => Have Size Property
+WeakSet => Does Not Have Size Property
+--
+Set     => Have Keys, Values, Entries
+WeakSet => Does Not Have clear, Keys, Values And Entries
+--
+Set     => Can Use forEach
+WeakSet => Cannot Use forEach
+
+Usage: Store objects and removes them once they become inaccessible
+
+// Examples
+// Type Of Data
+
+let mySet = new Set([1, 1, 1, 2, 3, "A", "A"]);
+
+console.log(mySet); // Set(4) {1, 2, 3, 'A'}
+
+// Size
+console.log(`Size Of Elements Inside Set Is: ${mySet.size}`); // ~~~ 4
+
+// Values + Keys [Alias For Values]
+let iterator = mySet.keys();
+
+console.log(iterator.next().value); // 1
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+console.log(iterator.next().value); // "A"
+console.log(iterator.next()); // {value: undefined, done: true}
+
+// forEach
+
+mySet.forEach((el) => console.log(el));
+// 1 2 3 "A"
+
+console.log("#".repeat(20));
+
+// Type Of Data
+
+let myWs = new WeakSet([{ A: 1, B: 2 }]);
+
+console.log(myWs); // WeakSet {{…}}
+=====
+
+=====
+Map Data Type
+
+Syntax: new Map(Iterable With Key/Value)
+
+Map vs Object:-
+
+Map => Does Not Contain Key By Default
+Object => Has Default Keys
+
+Map => Key Can Be Anything [Function, Object, Any Primitive Data Types]
+Object => String Or Symbol
+
+Map => Ordered By Insertion
+Object => Not 100% Till Now
+
+Map => Get Items By Size
+Object => Need To Do Manually
+
+Map => Can Be Directly Iterated
+Object => Not Directly And Need To Use Object.keys() And So On
+
+Map => Better Performance When Add Or Remove Data
+Object => Low Performance When Comparing To Ma
+
+let myObject = {};
+let myEmptyObject = Object.create(null);
+let myMap = new Map();
+
+console.log(myObject);
+console.log(myEmptyObject);
+console.log(myMap);
+
+let myNewObject = {
+  10: "Number",
+  "10": "String",
+};
+
+console.log(myNewObject[10]);
+
+let myNewMap = new Map();
+myNewMap.set(10, "Number");
+myNewMap.set("10", "String");
+myNewMap.set(true, "Boolean");
+myNewMap.set({a: 1, b: 2}, "Object");
+myNewMap.set(function doSomething() {}, "Function");
+
+console.log(myNewMap.get(10));
+console.log(myNewMap.get("10"));
+
+console.log("####");
+
+console.log(myNewObject);
+console.log(myNewMap);
+=====
+
+=====
+Map Methods
+
+Methods:-
+- set
+- get
+- delete
+- clear
+- has
+
+Properties:-
+- size
+
+let myMap = new Map([
+  [10, "Number"],
+  ["Name", "String"],
+  [false, "Boolean"],
+]);
+
+// myMap.set(10, "Number");
+// myMap.set("Name", "String");
+
+console.log(myMap);
+
+console.log(myMap.get(10));
+console.log(myMap.get("Name"));
+console.log(myMap.get(false));
+
+console.log("####");
+
+console.log(myMap.has("Name"));
+
+console.log("####");
+
+console.log(myMap.size);
+
+console.log(myMap.delete("Name"));
+
+console.log(myMap.size);
+
+myMap.clear();
+
+console.log(myMap.size);
+=====
+
+=====
+Map vs WeakMap
+
+Note: WeakMap Allows Garbage Collector To Do Its Task But Not Map.
+
+vs:-
+Map     => Key Can Be Anything
+WeakMap => Key Can Be Object Only
+
+let mapUser = { theName: "Elzero" };
+
+let myMap = new Map();
+
+myMap.set(mapUser, "Object Value");
+
+mapUser = null; // Override The Reference
+
+console.log(myMap);
+
+console.log("#".repeat(20));
+
+let wMapUser = { theName: "Elzero" };
+
+let myWeakMap = new WeakMap();
+
+myWeakMap.set(wMapUser, "Object Value");
+
+wMapUser = null; // Override The Reference
+
+console.log(myWeakMap);
+=====
+
+=====
+Array Methods from()
+
+Syntax:-
+- Array.from(Iterable, MapFunc, This)
+
+Examples:-
+console.log(Array.from("Ahmed")); // ['A', 'h', 'm', 'e', 'd']
+console.log(
+  Array.from("12345", function (n) {
+    return +n + +n;
+  })
+); // [2, 4, 6, 8, 10]
+console.log(Array.from("12345", (n) => +n + +n)); // [2, 4, 6, 8, 10]
+
+let myArray = [1, 1, 1, 2, 3, 4];
+
+let mySet = new Set(myArray);
+
+console.log(Array.from(mySet)); // [1, 2, 3, 4]
+
+// console.log([...new Set(myArray)]); // Future
+
+function af() {
+  return Array.from(arguments);
+}
+
+console.log(af("Osama", "Ahmed", "sayed", 1, 2, 3));
+// ['Osama', 'Ahmed', 'sayed', 1, 2, 3]
+=====
+
+=====
+Array Methods copyWithin()
+
+Usage:-
+Copy Part Of An Array To Another Location in The Same Array
+
+Syntax:-
+Array.copyWithin(Target, Start => Optional, End => Optional)
+- Target
+-- Index To Copy Part To
+-- If At Or Greater Than Array Length Nothing Will Be Copied
+- Start
+-- Index To Start Copying From
+-- If Ommited = Start From Index 0
+- End
+-- Index To End Copying From
+-- Not Including End
+-- If Ommited = Reach The End
+
+Examples:-
+let myArray = [10, 20, 30, 40, 50, "A", "B"];
+
+// myArray.copyWithin(3); // [10, 20, 30, 10, 20, 30, 40]
+
+// myArray.copyWithin(4, 6); // [10, 20, 30, 40, "B", "A", "B"]
+
+// myArray.copyWithin(4, -1); // [10, 20, 30, 40, "B", "A", "B"]
+
+// myArray.copyWithin(1, -2); // [10, "A", "B", 40, 50, "A", "B"]
+
+myArray.copyWithin(1, -2, -1); // [10, "A", 30, 40, 50, "A", "B"]
+
+console.log(myArray); // [10, 'A', 30, 40, 50, 'A', 'B']
+=====
+
+=====
+Array Methods some()
+
+Syntax:-
+Array.some(CallbackFunc(Element, Index, Array), This Argument)
+- CallbackFunc => Function To Run On Every Element On The Given Array
+-- Element => The Current Element To Process
+-- Index => Index Of Current Element
+-- Array => The Current Array Working With
+- This Argument => Value To Use As This When Executing CallbackFunc
+
+Using:-
+- Check if Element Exists In Array
+- Check If Number In Range
+
+Examples:-
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let myNumber = 10;
+
+// let check = nums.some(function (e) {
+//   console.log("Test");
+//   return e > 5;
+// });
+
+let check = nums.some(function (e) {
+  return e > this;
+}, myNumber);
+
+// let check = nums.some((e) => e > 5);
+
+console.log(check); // false
+
+function checkValues(arr, val) {
+  return arr.some(function (e) {
+    return e === val;
+  });
+}
+
+console.log(checkValues(nums, 20)); // false
+console.log(checkValues(nums, 5)); // true
+
+let range = {
+  min: 10,
+  max: 20,
+};
+
+let checkNumberInRange = nums.some(function (e) {
+  // console.log(this.min);
+  // console.log(this.max);
+  return e >= this.min && e <= this.max;
+}, range);
+
+console.log(checkNumberInRange); // true
+=====
+
+=====
+Array Methods every()
+
+Syntax:-
+- CallbackFunc => Function To Run On Every Element On The Given Array
+-- Element => The Current Element To Process
+-- Index => Index Of Current Element
+-- Array => The Current Array Working With
+- This Argument => Value To Use As This When Executing CallbackFunc
+
+Examples:-
+const locations = {
+  20: "Place 1",
+  30: "Place 2",
+  50: "Place 3",
+  40: "Place 4",
+};
+
+let mainLocation = 15;
+
+let locationsArray = Object.keys(locations);
+
+console.log(locationsArray); // ['20', '30', '40', '50']
+
+let locationArrayNumbers = locationsArray.map((n) => +n);
+
+console.log(locationArrayNumbers); // [20, 30, 40, 50]
+
+let check = locationArrayNumbers.every(function (e) {
+  return e > this;
+}, mainLocation);
+
+console.log(check); // true
+=====
+
+=====
+Spread Operator
+
+Usage:-
+Allow Iterable To Expand In Place
+
+Syntax:-
+Spread Operator => ...Iterable
+// Spread With String => Expand String
+
+Examples:-
+console.log("Ahmed"); // Ahmed
+console.log(..."Ahmed"); // A h m e d
+console.log([..."Ahmed"]); // [A, h, m, e, d]
+
+// Concatenate Arrays
+
+let myArray1 = [1, 2, 3];
+let myArray2 = [4, 5, 6];
+
+let allArrays = [...myArray1, ...myArray2];
+console.log(allArrays); // [1, 2, 3, 4, 5, 6]
+
+// Copy Array
+
+let copiedArray = [...myArray1];
+console.log(copiedArray); // [1, 2, 3]
+
+// Push Inside Array
+
+let allFriends = ["Osama", "Ahmed", "Sayed"];
+let thisYearFriends = ["Sameh", "Mahmoud"];
+
+allFriends.push(...thisYearFriends);
+
+console.log(allFriends); // ['Osama', 'Ahmed', 'Sayed', 'Sameh', 'Mahmoud']
+
+// Use With Math Object
+
+let myNums = [10, 20, -100, 100, 1000, 500];
+console.log(Math.max(...myNums)); // 1000
+
+// Spread With Objects => Merge Objects
+
+let objOne = {
+  a: 1,
+  b: 2,
+};
+let objTwo = {
+  c: 3,
+  d: 4,
+};
+
+console.log({ ...objOne, ...objTwo, e: 5 });
+// {a: 1, b: 2, c: 3, d: 4, e: 5}
+=====
+
+=====
+Regular Expression
+
+Syntax
+/pattern/modifier(s);
+new RegExp("pattern", "modifier(s)")
+
+Modifiers => Flags
+i => case-insensitive
+g => global
+m => Multilines
+
+Search Methods
+- match(Pattern)
+
+Match
+-- Matches A String Against a Regular Expression Pattern
+-- Returns An Array With The Matches
+-- Returns null If No Match Is Found.
+
+Examples:-
+let myString = "Hello Elzero Web School I Love elzero";
+
+let regex = /elzero/ig;
+
+console.log(myString.match(/elzero/));
+// ['elzero', index: 31, input: 'Hello Elzero Web School I Love elzero', groups: undefined]
+console.log(myString.match(regex)); // ['Elzero', 'elzero']
+=====
+
+=====
+Regular Expression Ranges
+
+- Part 1
+(X|Y) => X Or Y
+[0-9] => 0 To 9
+[^0-9] => Any Character Not 0 To 9
+Practice
+
+- Part 2
+[a-z]
+[^a-z]
+[A-Z]
+[^A-Z]
+[abc]
+[^abc]
+
+Examples:-
+let tld = "Com Net Org Info Code Io";
+let tldRe = /(info|org|io)/ig;
+console.log(tld.match(tldRe)); // [Org, Info, Io]
+
+let nums = "12345678910";
+let numsRe = /[0-2]/g;
+console.log(nums.match(numsRe)); // ['1', '2', '1', '0']
+
+let notNums = "12345678910";
+let notNsRe = /[^0-2]/g;
+console.log(notNums.match(notNsRe)); // ['3', '4', '5', '6', '7', '8', '9']
+
+let specialNums = "1!2@3#4$5%678910";
+let specialNumsRe = /[^0-9]/g;
+console.log(specialNums.match(specialNumsRe)); // ['!', '@', '#', '$', '%']
+
+let practice = "Os1 Os1Os Os2 Os8 Os8Os";
+let practiceRe = /Os[5-9]Os/g;
+console.log(practice.match(practiceRe)); // ['Os8Os']
+=====
+
+=====
+RegEx More Examples
+
+let myString = "AaBbcdefG123!234%^&*";
+let atozSmall = /[a-z]/g;
+let NotAtozSmall = /[^a-z]/g;
+let atozCapital = /[A-Z]/g;
+let NotAtozCapital = /[^A-Z]/g;
+let aAndcAnde = /[ace]/g;
+let NotaAndcAnde = /[^ace]/g;
+let lettersCapsAndSmall = /[a-zA-Z]/g;
+let numsAndSpecials = /[^a-zA-Z]/g;
+let specials = /[^a-zA-Z0-9]/g;
+console.log(myString.match(atozSmall)); // ['a', 'b', 'c', 'd', 'e', 'f']
+console.log(myString.match(NotAtozSmall)); // ['A', 'B', 'G', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+console.log(myString.match(atozCapital)); // ['A', 'B', 'G']
+console.log(myString.match(NotAtozCapital)); // ['a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+console.log(myString.match(aAndcAnde)); // ['a', 'c', 'e']
+console.log(myString.match(NotaAndcAnde)); // ['A', 'B', 'b', 'd', 'f', 'G', '1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+console.log(myString.match(lettersCapsAndSmall)); // ['A', 'a', 'B', 'b', 'c', 'd', 'e', 'f', 'G']
+console.log(myString.match(numsAndSpecials)); // ['1', '2', '3', '!', '2', '3', '4', '%', '^', '&', '*']
+console.log(myString.match(specials)); // ['!', '%', '^', '&', '*']
+=====
+
+=====
+Regular Expression Character Classes Part 1
+
+. => matches any character, except newline or other line terminators.
+\w => matches word characters. [a-z, A-Z, 0-9 And Underscore]
+\W => matches Non word characters
+\d => matches digits from 0 to 9.
+\D => matches non-digit characters.
+\s => matches whitespace character.
+\S => matches non whitespace character.
+
+Examples:-
+let email = 'O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com';
+let dot = /./g;
+let word = /\w/g;
+let valid = /\w@\w.(com|net)/g;
+console.log(email.match(dot)); // return all character with spaces and special character
+console.log(email.match(word)); // return all character
+console.log(email.match(valid)); // ['O@g.com', 'O@g.net', 'A@Y.com', '1@1.com']
+=====
+
+=====
+Regular Expression Character Classes Part 2
+
+\b => matches at the beginning or end of a word.
+\B => matches NOT at the beginning/end of a word.
+
+Test Method
+pattern.test(input)
+
+Examples:-
+let names = "Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+let re = /(\bspam|spam\b)/ig;
+console.log(names.match(re)); // ['Spam', 'Spam', 'Spam', 'Spam', 'Spam']
+
+console.log(re.test(names)); // true
+console.log(/(\bspam|spam\b)/ig.test("Osama")); // false
+console.log(/(\bspam|spam\b)/ig.test("1Spam")); // true
+console.log(/(\bspam|spam\b)/ig.test("Spam1")); // true
+=====
