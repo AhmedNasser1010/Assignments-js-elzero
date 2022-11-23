@@ -3416,7 +3416,7 @@ Brackets:                  Description:
 - [^0-9]                   - Find any digit NOT from X to Y
 - (x|y)                    - Find any of the alternatives specified
 
-Metacharacters:            Description:
+MetaCharacters:            Description:
 - .                        - Find a single character, except newline or line terminator        
 - \w                       - Find a word character
 - \W                       - Find a non-word character
